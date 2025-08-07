@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,9 @@
   <link href="assets/img/logosmall.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -26,8 +28,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">  <!-- Template Main CSS File -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"> <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -36,24 +40,149 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <style>
+    @media screen and (max-width: 700px) {
+      .mobile-text {
+        display: none;
+      }
+      .mobile-button {
+        margin-top: 3rem;
+      }
+    }
+    @media screen and (max-width: 700px) {
+    .hero-logo img {
+        height: 180vh !important;
+    }
+}
+  </style>
+
 </head>
 
 <body>
-
   <!-- ======= Cero Section ======= -->
   <section id="hero">
-    <div class="hero-container">
+    <div class="hero-container" style="padding: 0 !important;">
       <a href="index.html" class="hero-logo" data-aos="zoom-in">
-        <!-- <video autoplay muted loop id="myVideo">
-        <source src="assets/img/bg_video.mp4" type="video/mp4">
-        </video> -->
-        <img class="logo-device" src="assets/img/about.jpg" width="100%" alt="">
+        <img src="assets/img/banner2.jpg" style="width: 100%; object-fit: cover; display: block; padding: 0 !important;" alt="">
       </a>
-      <div class="content-bg">
-        <img class="logo-device" src="assets/img/logo.png" width="10%" style="padding: 1%;" alt="">
-        <h1>VENTUM</h1>
-        <p>Ofrecemos <strong>consultoría tecnológica y estratégica</strong> para maximizar <br> las ventajas competitivas y el retorno de la inversión de nuestros clientes.</p>
+      <style>
+        .centered-logo {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 50%;
+          top: 50px;
+          transform: translateX(-50%);
+          z-index: 10;
+        }
+
+        .top-rigth-logo {
+          position: absolute;
+          left: 55%;
+          height: 1.5rem;
+          align-items: start;
+          scale: 0.8;
+        }
+
+        .main-slogan {}
+
+        .call-to-action-text {
+          color: rgb(226, 226, 226);
+        }
+
+        .contact-us-text {
+          color: rgb(212, 212, 212);
+        }
+
+        .contact-us-email {
+          color: rgb(226, 226, 226);
+        }
+
+        @media screen and (min-width: 601px) {
+          .top-left-logo {
+            width: 10%;
+          }
+
+          .top-rigth-logo {
+            position: absolute;
+            left: 80%;
+            height: 2rem;
+            align-items: start;
+          }
+
+          .main-slogan {
+            padding-top: 18rem;
+            font-size: 32px;
+            font-weight: 600;
+          }
+
+          .call-to-action-text {
+            padding-top: 15rem;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .top-left-logo {
+            width: 15%;
+          }
+
+          .top-rigth-logo {
+            position: absolute;
+            left: 55%;
+            height: 1.5rem;
+            align-items: start;
+            scale: 0.8;
+          }
+
+          .main-slogan {
+            padding-top: 10rem;
+            font-size: 28px;
+            font-weight: 600;
+          }
+
+          .call-to-action-text {
+            padding-top: 5rem;
+          }
+        }
+      </style>
+      <div class="content-bg" style="height: 100%;">
+        <div class="centered-logo">
+          <img src="assets/img/logo.png" style="width: 60px; height: 60px;" alt="">
+          <h1 style="margin: 0; margin-left: 15px; font-size: 2.5rem; font-weight: 500;">VENTUM</h1>
+        </div>
+        <p class="main-slogan">Tu socio para <strong>transformar ideas </strong>en <span
+            style="color: #dc4e1a;">productos digitales.</span><br></p>
         <!-- Use a button to pause/play the video with JavaScript -->
+
+        <p class="call-to-action-text p-5 mobile-text">
+          ¿Listo para explorar soluciones que marcan la diferencia? <br>
+          Reservá tu sesión estratégica gratuita de 30 minutos tocando el botón de abajo <br> y descubramos juntos el camino hacia tu evolución digital.
+        </p>
+        <button id="calendly-btn" class="mobile-button" style="
+        min-width: 30%;
+        min-height: 10%;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+        color: whitesmoke;
+        transition: all 0.3s ease-in-out;
+        background-color: #cf4918;
+        border-radius: 19px;
+        padding: 1rem;
+        border: 0;">Agendá tu primera sesión de estrategia
+        </button>
+        <script>
+          document.getElementById('calendly-btn').addEventListener('click', (event) => {
+            event.preventDefault();
+            window.open('https://calendly.com/jbnogal/30min');
+          });
+        </script>
       </div>
     </div>
   </section><!-- End Cero -->
@@ -68,15 +197,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="#about">Acerca de</a></li>
-          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
-          <li><a class="nav-link scrollto" href="#industries">Industrias</a></li>
-          <li><a class="nav-link scrollto" href="#questions">Preguntas</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Experiencia</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
-          <li class="dropdown"><a href="#"><span>ESP</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" style="font-weight: 600;" href="#services">Servicios</a></li>
+          <li><a class="nav-link scrollto" style="font-weight: 600;" href="#about">Acerca de</a></li>
+          <li><a class="nav-link scrollto" style="font-weight: 600;" href="#industries">Industrias</a></li>
+          <li><a class="nav-link scrollto" style="font-weight: 600;" href="#contact">Contacto</a></li>
+          <li class="dropdown"><a style="font-weight: 600;" href="#"><span>ES</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">ENG</a></li>
+              <li><a style="font-weight: 600;" href="index.html">EN</a></li>
             </ul>
           </li>
         </ul>
@@ -88,6 +215,49 @@
 
   <main id="main">
 
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Servicios</h2>
+          <p>Ofrecemos el conocimiento y la experiencia con tecnologías de vanguardia <br> y las mejores prácticas de la industria para
+            crear soluciones de nivel empresarial.</p>
+        </div>
+
+        <div class="row">
+          <div class="image col-lg-6 order-2 order-lg-1"
+            style='background-image: url("assets/img/services.jpg"); border-radius: 2%;' data-aos="fade-left"
+            data-aos-delay="100"></div>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up">
+              <i class="bx bx-receipt"></i>
+              <h4>Diagnóstico y detección de oportunidades de mejora</h4>
+              <p>Analizamos los procesos de negocio de la empresa para detectar oportunidades de mejora a través
+                del uso de tecnologías.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Análisis de requisitos y marco de comparación de opciones</h4>
+              <p>Evaluamos, comparamos y presentamos un análisis de las diferentes opciones tecnológicas y presupuestos.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-images"></i>
+              <h4>Plan de implementación con objetivos SMART</h4>
+              <p> Establecimiento de objetivos específicos, medibles, alcanzables, relevantes y con plazos definidos</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-shield"></i>
+              <h4>Ejecución, despliegue y mantenimiento del proyecto.</h4>
+              <p>Te guiaremos en cada paso del proceso de desarrollo y te entregaremos un proyecto llave en mano. </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
       <div class="container">
@@ -97,69 +267,27 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6" data-aos="fade-right">
+          <div class="col-lg-6 mt-4" data-aos="fade-right">
+            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3" style="display: flex; align-items: center; justify-content: center; min-height: 400px;">
+              <ul style="line-height: 3.5; list-style: none; padding: 0;">
+                <li style="display: flex; align-items: center; font-weight: 600; margin-bottom: 1rem;"><i class="bx bx-check-double" style="margin-right: 10px; color: #dc4e1a;"></i> Startups Lean y MVPs</li>
+                <li style="display: flex; align-items: center; font-weight: 600; margin-bottom: 1rem;"><i class="bx bx-check-double" style="margin-right: 10px; color: #dc4e1a;"></i> Entrega y Despliegue Continuo</li>
+                <li style="display: flex; align-items: center; font-weight: 600; margin-bottom: 1rem;"><i class="bx bx-check-double" style="margin-right: 10px; color: #dc4e1a;"></i> Automatización y web scraping</li>
+                <li style="display: flex; align-items: center; font-weight: 600; margin-bottom: 1rem;"><i class="bx bx-check-double" style="margin-right: 10px; color: #dc4e1a;"></i> IA y Aprendizaje Automático</li>
+                <li style="display: flex; align-items: center; font-weight: 600; margin-bottom: 1rem;"><i class="bx bx-check-double" style="margin-right: 10px; color: #dc4e1a;"></i> DevOps e Ingeniería en la Nube</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
             <div class="image">
               <img src="assets/img/about.jpg" class="img-fluid" alt="">
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              <h3>Consultoría tecnológica para empresas</h3>
-              <p class="fst-italic">
-                Somos un equipo interdisciplinario de profesionales 
-altamente comprometido y con años de experiencia en el desarrollo de soluciones informáticas.  Adaptamos las últimas tendencias tecnológicas a las necesidades de cada cliente para ayudarlo a hacer crecer su negocio y mejorar su funcionamiento.
-              </p>
-              <ul>
-                <li><i class="bx bx-check-double"></i> Estrategia y asesoramiento en la nube</li>
-                <li><i class="bx bx-check-double"></i> Modelo operativo inteligente e innovación</li>
-                <li><i class="bx bx-check-double"></i> Análisis y automatización</li>
-                <li><i class="bx bx-check-double"></i> Retorno de la inversión en tecnología</li>
-                <li><i class="bx bx-check-double"></i> Arquitectura sólida</li>
-              </ul>
-            </div>
-          </div>
+
         </div>
 
       </div>
     </section><!-- End About Us Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Servicios</h2>
-          <p>Aportamos el potencial necesario para transformar el negocio del cliente a través del dominio <br> de las tecnologías más avanzadas y la aplicación de modelos ágiles.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6 order-2 order-lg-1">
-            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up">
-              <i class="bx bx-receipt"></i>
-              <h4>Diagnóstico y detección de oportunidades de mejora</h4>
-              <p>Analizamos los procesos de negocio de la empresa con el fin de detectar oportunidades de mejora mediante el uso de nuevas tecnologías.</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-cube-alt"></i>
-              <h4>Análisis de requerimientos y marco de comparación de opciones</h4>
-              <p>Evaluamos, comparamos y presentamos un análisis de las distintas opciones tecnológicas y presupuestos.</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-images"></i>
-              <h4>Plan de implementación y transición entre origen y destino</h4>
-              <p>Planificamos la transición entre el escenario origen y el escenario destino en la empresa, atendiendo las caracteríticas particulares de cada cliente.</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-shield"></i>
-              <h4>Ejecución, despliegue y puesta en marcha del proyecto.</h4>
-              <p>Nuestro personal técnico completa la oferta de producto con todos aquellos servicios que usted necesite para la puesta en marcha del proyecto.</p>
-            </div>
-          </div>
-          <div  class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/services.jpg"); border-radius: 2%;' data-aos="fade-left" data-aos-delay="100"></div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
 
     <!-- ======= Featured Section ======= -->
     <section id="industries" class="featured">
@@ -167,75 +295,106 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
 
         <div class="section-title" data-aos="fade-up">
           <h2>Industrias</h2>
-          <p>Un adecuado asesoramiento tecnológico aporta inmediatamente grandes beneficios a las empresas <br> ya que supone una automatización eficaz de los procesos diarios y por lo tanto una mejora en la productividad y competitividad.</p>
+          <p>Nuestra empresa cuenta con amplia experiencia y un historial de éxito <br> en diversas industrias, incluyendo
+            petróleo y gas, logística, y bienes raíces.</p>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin-bottom: 4em;">
           <div class="col-lg-6" data-aos="fade-right">
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
                 <figure>
-                  <img width="80%" src="assets/img/featured-1.jpg" alt="" class="img-fluid">
+                  <img width="100%" src="assets/img/featured-5.png" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-2">
                 <figure>
-                  <img width="80%" src="assets/img/featured-2.jpg" alt="" class="img-fluid">
+                  <img width="100%" src="assets/img/featured-6.png" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-3">
                 <figure>
-                  <img width="80%" src="assets/img/featured-3.jpg" alt="" class="img-fluid">
+                  <img width="100%" src="assets/img/featured-7.png" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-4">
                 <figure>
-                  <img width="80%" src="assets/img/featured-4.jpg" alt="" class="img-fluid">
+                  <img width="100%" src="assets/img/featured-8.png" alt="" class="img-fluid">
                 </figure>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
+          <div class="col-lg-6 mt-4 mb-4 mt-lg-0" data-aos="fade-left">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
                 <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-                  <h4>Energía, gas y petróleo</h4>
+                  <h4>Petróleo y Gas</h4>
+                  <div class="accordion-item" data-for-tab="#tab-1" style="border: 0;">
+                    <p>Implementamos un proyecto de monitoreo en tiempo real para la inyección y niveles de químicos en pozos petroleros
+                      utilizando tecnología IOT.</p>
+                  </div>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-                  <h4>Construcción y bienes inmobiliarios</h4>
+                  <h4>Bienes Raíces</h4>
+                  <div class="accordion-item" data-for-tab="#tab-2" style="border: 0;">
+                    <p>Desarrollamos un sistema integral de facturación, gestión y administración para un fideicomiso que supervisa un
+                      proyecto de más de 200,000 metros cuadrados.</p>
+                  </div>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-                  <h4>Tecnología, medios y telecomunicaciones</h4>
+                  <h4>Telecomunicaciones</h4>
+                  <div class="accordion-item" data-for-tab="#tab-3" style="border: 0;">
+                    <p>Monitoreo de redes complejas y visualización en tiempo real.</p>
+                  </div>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-                  <h4>Bienes de consumo, retail y logística</h4>
+                  <h4>Logística</h4>
+                  <div class="accordion-item" data-for-tab="#tab-4" style="border: 0;">
+                    <p>Optimización de rutas y planificación para asegurar el uso más eficiente de los recursos de la flota, resultando en
+                      una reducción de costos operativos de más del 10% para una flota de 300 vehículos.</p>
+                  </div>
                 </a>
               </li>
             </ul>
           </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+          $(document).ready(function () {
+            // Ocultar todos los elementos del acordeón al inicio
+            $('.accordion-item').hide();
+            $('.accordion-item[data-for-tab="#tab-1"]').slideDown();
 
+            // Manejador de clics para los enlaces de las pestañas
+            $('.nav-tabs a').click(function () {
+              // Obtener el id de la pestaña seleccionada
+              var tabId = $(this).attr('href');
+              console.log({ tabId })
+              // Ocultar todos los elementos del acordeón
+              $('.accordion-item').slideUp();
+
+              // Mostrar el elemento del acordeón correspondiente a la pestaña seleccionada
+              $('.accordion-item[data-for-tab="' + tabId + '"]').slideDown();
+            });
+          });
+        </script>
       </div>
     </section><!-- End Featured Section -->
 
-    <!-- ======= Questions Section ======= -->
-    <section id="questions" class="why-us" style="margin-top: 3em;">
+    <!-- ======= FAQ Section ======= -->
+    <!-- <section id="questions" class="why-us" style="margin-top: 3em;">
       <div class="container-fluid">
-
         <div class="row">
-
           <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-stretch">
-
             <div class="content" data-aos="fade-up">
-              <h3>Algunas <strong>preguntas</strong></h3>
+              <h3> <strong>FAQ</strong></h3>
             </div>
-
             <div class="accordion-list">
               <ul>
                 <li data-aos="fade-up" data-aos-delay="100">
@@ -267,27 +426,25 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
 
               </ul>
             </div>
-
           </div>
 
           <div class="col-lg-5 order-1 order-lg-2 align-items-stretch video-box" style='background-image: url("assets/img/why-us.jpg");' data-aos="zoom-in">
-           <!-- <a  ref="#" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>-->
+            <a  ref="#" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Why Us Section -->
+    </section> -->
+    <!-- End FAQ Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <!-- <section id="portfolio" class="portfolio">
       <div class="container">
-
         <div class="section-title" data-aos="fade-up">
           <h2>Nuestra experiencia</h2>
           <p>Contamos con una vasta experiencia técnica, organizativa y de desarrollo.</p>
         </div>
-
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
@@ -388,50 +545,16 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section> -->
+    <!-- End Portfolio Section -->
 
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients" style="margin-bottom: 4em;">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="500">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-    
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
       <div class="container">
 
         <div class="section-title">
           <h2>Contacto</h2>
-          <p>Estamos disponibles para trabajar si se presenta el proyecto adecuado, ¡No dude en contactarnos!</p>
+          <p>Si tienes una idea o proyecto que te gustaría hacer realidad, ¡no dudes en contactarnos!</p>
         </div>
 
         <div class="row">
@@ -440,35 +563,36 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
             <div class="info d-flex flex-column justify-content-center" data-aos="fade-right">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Locación:</h4>
+                <h4>Ubicación:</h4>
+                <p>Nuevo México,<br>EE.UU.</p>
                 <p>Buenos Aires,<br>Argentina</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@ventum-software.com</p>
+                <h4>Correo electrónico:</h4>
+                <p>info@ventum.dev</p>
               </div>
 
-              <div class="phone">
+              <!-- <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Teléfono:</h4>
                 <p>+54 9 11 4970-3070</p>
-              </div>
+              </div> -->
 
             </div>
-
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-left">
+            <form action="https://api1.o-o.fyi/v1/form/asform/" method="post" role="form" class="php-email-form"
+              data-aos="fade-left">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Correo electrónico" required>
                 </div>
               </div>
               <div class="form-group mt-3">
@@ -478,9 +602,9 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
                 <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Cargando</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">¡Tu mensaje ha sido enviado. ¡Gracias!</div>
               </div>
               <div class="text-center"><button type="submit">Enviar</button></div>
             </form>
@@ -505,10 +629,10 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
           <div class="col-lg-6">
             <a href="#header" class="scrollto footer-logo"><img src="assets/img/logo.png" alt=""></a>
             <h3>VENTUM</h3>
-            <p>Ayudamos a materializar proyectos con nuestra experiencia técnica, organizativa y de desarrollo, siempre teniendo como centro el negocio u objetivo de la organización.</p>
+            <p>Entregamos soluciones de software de primera calidad a través de la colaboración con el cliente, <br>
+              enfatizando en la transparencia, el trabajo en equipo y la comunicación para el éxito.</p>
           </div>
         </div>
-
 
         <!--<div class="social-links">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -522,7 +646,8 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
 
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -530,7 +655,7 @@ altamente comprometido y con años de experiencia en el desarrollo de soluciones
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://api1.o-o.fyi/v1/form/static/form_contacto.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
