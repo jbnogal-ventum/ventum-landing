@@ -1,0 +1,1705 @@
+/* ----------------------------------------------------------------------------------------
+* Ventum Software - Home page layer
+* Loaded after custom.css. Reuses the template's tokens, spacing and components;
+* only adds what the Ventum content needs.
+* ---------------------------------------------------------------------------------------- */
+/* INDEX
+----------------------------------------------------------------------------------------
+01. Brand tokens
+02. Intro
+03. Header brand
+04. Hero
+05. Clients
+06. Problems
+07. Industry expertise
+08. What we build
+09. AI approach
+10. Methodology
+11. Why Ventum
+12. Contact
+13. Footer
+14. Responsive
+15. Reduced motion
+-------------------------------------------------------------------------------------- */
+
+/************************************/
+/***      01. Brand tokens        ***/
+/************************************/
+
+:root{
+	--accent-color		: #0062DD;
+	--accent-soft		: #E6F0FC;
+	--accent-secondary	: #1283FF;
+	--accent-on-dark	: var(--accent-secondary);
+	--dark-surface		: #15161B;
+	--dark-line			: rgba(255, 255, 255, 0.12);
+	--ease-out			: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+[id]{
+	scroll-margin-top: 90px;
+}
+
+.vt-lead{
+	font-size: 20px;
+	line-height: 1.5em;
+	color: var(--primary-color);
+}
+
+.vt-section-note{
+	margin: 0;
+	text-align: end;
+}
+
+.btn-default.btn-ghost{
+	background: transparent;
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+}
+
+.btn-default.btn-ghost::before{
+	color: var(--primary-color);
+}
+
+.btn-default.btn-ghost::after{
+	background: var(--primary-color);
+}
+
+.btn-default.btn-ghost:hover{
+	color: var(--white-color);
+}
+
+.btn-default.btn-ghost:hover::before{
+	color: var(--white-color);
+}
+
+.btn-default:focus-visible,
+.vt-client:focus-visible,
+.vt-options input:focus-visible + span{
+	outline: 2px solid var(--accent-color);
+	outline-offset: 3px;
+}
+
+.vt-home #ball{
+	background: var(--accent-secondary);
+}
+
+.vt-sticky{
+	position: sticky;
+	top: 120px;
+}
+
+/************************************/
+/***         02. Intro            ***/
+/************************************/
+
+.vt-intro-overlay{
+	display: none;
+}
+
+.vt-intro .vt-intro-overlay{
+	position: fixed;
+	inset: 0;
+	z-index: 2000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--secondary-color);
+}
+
+.vt-intro body{
+	overflow: hidden;
+}
+
+.vt-intro-logo{
+	--logo-w: min(460px, 78vw);
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: var(--logo-w);
+	aspect-ratio: 2306 / 341;
+}
+
+.vt-intro-icon{
+	position: relative;
+	flex: 0 0 auto;
+	width: 16.78%;
+	aspect-ratio: 387 / 341;
+}
+
+/* Feather images carry a 10px transparent margin (387x341 artwork on a 407x361 canvas) */
+.vt-intro-icon img{
+	position: absolute;
+	top: -2.933%;
+	bottom: -2.933%;
+	left: -2.584%;
+	right: -2.584%;
+	width: 105.168%;
+	height: 105.865%;
+}
+
+.vt-intro-wordmark{
+	flex: 0 0 auto;
+	width: 79.79%;
+	margin-left: 3.43%;
+}
+
+.vt-intro-wordmark img{
+	display: block;
+	width: 100%;
+}
+
+/************************************/
+/***      03. Header brand        ***/
+/************************************/
+
+.vt-brand{
+	display: inline-flex;
+	align-items: center;
+}
+
+.navbar-brand img.vt-brand-logo,
+.vt-brand-logo{
+	display: block;
+	width: 170px;
+	min-width: 0;
+	height: auto;
+}
+
+.vt-intro .main-header .vt-brand-logo{
+	opacity: 0;
+}
+
+/************************************/
+/***          04. Hero            ***/
+/************************************/
+
+.hero.vt-hero{
+	background: var(--secondary-color);
+	padding: 150px 0 170px;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.vt-hero .container{
+	position: relative;
+	z-index: 2;
+}
+
+.vt-hero-canvas{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.vt-hero-ghost{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: min(760px, 90vw);
+	aspect-ratio: 1;
+	transform: translate(-50%, -50%);
+	background: var(--accent-color);
+	-webkit-mask: url(../images/ventum-wing.png) center / contain no-repeat;
+	mask: url(../images/ventum-wing.png) center / contain no-repeat;
+	opacity: 0.045;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.hero-layout-2 .section-title h1.vt-hero-title{
+	font-size: 76px;
+	letter-spacing: -0.045em;
+	line-height: 1.04em;
+}
+
+.vt-hero-title .vt-word{
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+	padding-bottom: 0.08em;
+}
+
+.vt-hero-title .vt-word > span{
+	display: inline-block;
+}
+
+/* Word wrappers are spans too: keep them from picking up the accent-span rule */
+.section-title h1.vt-hero-title .vt-word,
+.section-title h1.vt-hero-title .vt-word > span{
+	color: inherit;
+}
+
+.vt-hero .section-title h3{
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.vt-hero .hero-body{
+	max-width: 620px;
+}
+
+.vt-hero .hero-body p{
+	font-size: 20px;
+	color: #5E616A;
+}
+
+.vt-scroll-cue{
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	width: 26px;
+	height: 42px;
+	margin-left: -13px;
+	border: 2px solid var(--primary-color);
+	border-radius: 20px;
+	z-index: 2;
+	opacity: 0.5;
+	transition: opacity 0.3s;
+}
+
+.vt-scroll-cue:hover{
+	opacity: 1;
+}
+
+.vt-scroll-cue span{
+	position: absolute;
+	top: 8px;
+	left: 50%;
+	width: 4px;
+	height: 8px;
+	margin-left: -2px;
+	border-radius: 2px;
+	background: var(--accent-secondary);
+	animation: vt-cue 1.8s var(--ease-out) infinite;
+}
+
+@keyframes vt-cue{
+	0%{ transform: translateY(0); opacity: 1; }
+	70%{ transform: translateY(14px); opacity: 0; }
+	100%{ transform: translateY(0); opacity: 0; }
+}
+
+/************************************/
+/***        05. Clients           ***/
+/************************************/
+
+.vt-clients.exclusive-partners{
+	padding: 100px 0;
+	overflow: hidden;
+}
+
+.vt-marquee{
+	--gap: 24px;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	padding: 10px 0;
+	-webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+	mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.vt-marquee-track{
+	display: flex;
+	flex-shrink: 0;
+	gap: var(--gap);
+	padding: 0 calc(var(--gap) / 2);
+	margin: 0;
+	list-style: none;
+	animation: vt-marquee 45s linear infinite;
+}
+
+.vt-marquee:hover .vt-marquee-track,
+.vt-marquee:focus-within .vt-marquee-track,
+.vt-marquee.is-paused .vt-marquee-track{
+	animation-play-state: paused;
+}
+
+@keyframes vt-marquee{
+	from{ transform: translateX(0); }
+	to{ transform: translateX(-100%); }
+}
+
+.vt-client{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+	width: 340px;
+	height: 230px;
+	padding: 28px 30px;
+	border-radius: 30px;
+	background: var(--secondary-color);
+	overflow: hidden;
+	cursor: default;
+	transition: background-color 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+
+.vt-client-tag{
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent-color);
+	transition: color 0.4s var(--ease-out);
+}
+
+.vt-client-name{
+	margin-top: auto;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.08em;
+	letter-spacing: -0.03em;
+	color: var(--primary-color);
+	transition: font-size 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+
+.vt-client-desc{
+	max-height: 0;
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.45em;
+	color: rgba(255, 255, 255, 0.8);
+	opacity: 0;
+	transform: translateY(12px);
+	transition: max-height 0.5s var(--ease-out), margin 0.5s var(--ease-out), opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.vt-client:hover,
+.vt-client:focus-visible,
+.vt-client.is-active{
+	background: var(--dark-surface);
+	transform: translateY(-4px);
+}
+
+.vt-client:hover .vt-client-tag,
+.vt-client:focus-visible .vt-client-tag,
+.vt-client.is-active .vt-client-tag{
+	color: var(--accent-secondary);
+}
+
+.vt-client:hover .vt-client-name,
+.vt-client:focus-visible .vt-client-name,
+.vt-client.is-active .vt-client-name{
+	color: var(--white-color);
+	font-size: 21px;
+}
+
+.vt-client:hover .vt-client-desc,
+.vt-client:focus-visible .vt-client-desc,
+.vt-client.is-active .vt-client-desc{
+	max-height: 110px;
+	margin-top: 10px;
+	opacity: 1;
+	transform: none;
+	transition-delay: 0s, 0s, 0.08s, 0.08s;
+}
+
+/************************************/
+/***        06. Problems          ***/
+/************************************/
+
+.vt-problems{
+	padding: 100px 0;
+	background: var(--secondary-color);
+}
+
+.vt-problems .section-title{
+	margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 992px){
+	.vt-problems .section-title h2{
+		font-size: 56px;
+	}
+}
+
+.vt-problem-list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-problem{
+	display: flex;
+	gap: 30px;
+	padding: 40px;
+	margin-bottom: 20px;
+	border-radius: 40px;
+	background: var(--white-color);
+	opacity: 0.45;
+	transform: scale(0.98);
+	transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+}
+
+.vt-problem:last-child{
+	margin-bottom: 0;
+}
+
+.vt-problem.is-active,
+.vt-problem:hover{
+	opacity: 1;
+	transform: scale(1);
+	box-shadow: 0 20px 50px -30px rgba(21, 22, 27, 0.25);
+}
+
+.vt-no-observer .vt-problem{
+	opacity: 1;
+	transform: none;
+}
+
+.vt-problem-num{
+	flex: 0 0 auto;
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--accent-color);
+	padding-top: 6px;
+	min-width: 28px;
+}
+
+.vt-problem h3{
+	font-size: 26px;
+	margin-bottom: 12px;
+}
+
+.vt-problem p{
+	margin: 0;
+}
+
+/************************************/
+/***    07. Industry expertise    ***/
+/************************************/
+
+.vt-industry{
+	padding: 120px 0;
+}
+
+.vt-industry-content .section-title{
+	margin-bottom: 30px;
+}
+
+.vt-industry-content .btn-default{
+	margin-top: 10px;
+}
+
+.vt-edu-visual{
+	position: relative;
+	margin-right: 60px;
+	padding: 40px;
+	border-radius: 40px;
+	background: var(--secondary-color);
+}
+
+.vt-edu-window{
+	background: var(--white-color);
+	border-radius: 20px;
+	box-shadow: 0 30px 60px -40px rgba(21, 22, 27, 0.35);
+	overflow: hidden;
+}
+
+.vt-edu-bar{
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 14px 18px;
+	border-bottom: 1px solid var(--divider-color);
+}
+
+.vt-edu-bar i{
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--divider-color);
+}
+
+.vt-edu-bar span{
+	margin-left: 10px;
+	font-size: 13px;
+	color: var(--text-color);
+}
+
+.vt-edu-body{
+	display: flex;
+}
+
+.vt-edu-side{
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 22px 16px;
+	border-right: 1px solid var(--divider-color);
+}
+
+.vt-edu-side b{
+	display: block;
+	width: 28px;
+	height: 8px;
+	border-radius: 4px;
+	background: var(--divider-color);
+}
+
+.vt-edu-side b.is-on{
+	background: var(--accent-color);
+}
+
+.vt-edu-main{
+	flex: 1;
+	padding: 22px;
+	min-width: 0;
+}
+
+.vt-edu-row{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.vt-edu-label{
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--primary-color);
+}
+
+.vt-edu-pill{
+	flex: 0 0 auto;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 4px 10px;
+	border-radius: 20px;
+	background: var(--accent-soft);
+	color: var(--accent-color);
+}
+
+.vt-edu-meter{
+	height: 6px;
+	border-radius: 3px;
+	background: var(--secondary-color);
+	overflow: hidden;
+	margin-bottom: 18px;
+}
+
+.vt-edu-meter span{
+	display: block;
+	height: 100%;
+	width: var(--w);
+	background: var(--accent-color);
+	border-radius: 3px;
+	transform-origin: left;
+	transform: scaleX(0);
+	transition: transform 1.4s var(--ease-out) 0.3s;
+}
+
+.vt-edu-cards{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	margin-bottom: 18px;
+}
+
+.vt-edu-card{
+	padding: 12px;
+	border-radius: 12px;
+	background: var(--secondary-color);
+}
+
+.vt-edu-card em{
+	display: block;
+	font-style: normal;
+	font-size: 11px;
+	color: var(--text-color);
+}
+
+.vt-edu-card strong{
+	font-size: 20px;
+	color: var(--primary-color);
+}
+
+.vt-edu-chart{
+	display: flex;
+	align-items: flex-end;
+	gap: 8px;
+	height: 90px;
+}
+
+.vt-edu-chart span{
+	flex: 1;
+	height: var(--h);
+	border-radius: 6px 6px 2px 2px;
+	background: var(--divider-color);
+	transform-origin: bottom;
+	transform: scaleY(0);
+	transition: transform 0.9s var(--ease-out);
+}
+
+.vt-edu-chart span:last-child{
+	background: var(--primary-color);
+}
+
+.vt-edu-chart span:nth-child(2){ transition-delay: 0.08s; }
+.vt-edu-chart span:nth-child(3){ transition-delay: 0.16s; }
+.vt-edu-chart span:nth-child(4){ transition-delay: 0.24s; }
+.vt-edu-chart span:nth-child(5){ transition-delay: 0.32s; }
+.vt-edu-chart span:nth-child(6){ transition-delay: 0.40s; }
+.vt-edu-chart span:nth-child(7){ transition-delay: 0.48s; }
+
+.vt-edu-visual.is-inview .vt-edu-meter span,
+.vt-edu-visual.is-inview .vt-edu-chart span{
+	transform: none;
+}
+
+.vt-edu-badge{
+	position: absolute;
+	top: 50%;
+	right: -60px;
+	width: 130px;
+	height: 130px;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background: var(--dark-surface);
+}
+
+.vt-edu-badge svg{
+	width: 100%;
+	height: 100%;
+	animation: rotate 30s linear infinite;
+}
+
+.vt-edu-badge text{
+	fill: var(--white-color);
+	font-size: 15.5px;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.vt-edu-badge-icon{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 46px;
+	height: auto;
+	transform: translate(-50%, -50%);
+}
+
+/************************************/
+/***      08. What we build       ***/
+/************************************/
+
+.vt-build .section-title h2{
+	max-width: 820px;
+}
+
+.vt-cap{
+	display: flex;
+	flex-direction: column;
+	padding: 32px;
+	border: 1px solid transparent;
+	transition: transform 0.5s var(--ease-out), border-color 0.4s, box-shadow 0.5s var(--ease-out);
+}
+
+.vt-cap:hover{
+	transform: translateY(-6px);
+	border-color: var(--divider-color);
+	box-shadow: 0 24px 50px -36px rgba(21, 22, 27, 0.35);
+}
+
+.vt-cap-top{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 50px;
+}
+
+.vt-cap-icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	font-size: 20px;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+	transition: background-color 0.4s, color 0.4s, transform 0.5s var(--ease-out);
+}
+
+.vt-cap:hover .vt-cap-icon{
+	background: var(--accent-color);
+	color: var(--white-color);
+	transform: rotate(-8deg) scale(1.05);
+}
+
+.vt-cap-num{
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--text-color);
+}
+
+.vt-cap .service-content-title{
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.vt-cap .service-content-title h2{
+	font-size: 24px;
+	max-width: none;
+	text-transform: none;
+	line-height: 1.15em;
+}
+
+.vt-cap p{
+	margin: 0;
+}
+
+.vt-cap-cta{
+	background: var(--dark-surface);
+	justify-content: space-between;
+}
+
+.vt-cap-cta .service-content-title{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	align-items: flex-end;
+	gap: 16px;
+}
+
+.vt-cap-cta .service-content-title h2{
+	color: var(--white-color);
+	font-size: 30px;
+}
+
+.vt-cap-cta-label{
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.vt-cap-arrow{
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: var(--accent-color);
+}
+
+.vt-cap-arrow img{
+	transition: transform 0.3s ease-in-out;
+}
+
+.vt-cap-arrow{
+	transition: background-color 0.3s;
+}
+
+.vt-cap-cta:hover .vt-cap-arrow{
+	background: var(--accent-secondary);
+}
+
+.vt-cap-cta:hover .vt-cap-arrow img{
+	transform: rotate(45deg);
+}
+
+/************************************/
+/***       09. AI approach        ***/
+/************************************/
+
+.vt-ai{
+	padding: 120px 0;
+	background: var(--dark-surface);
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.vt-ai .section-title h2{
+	color: var(--white-color);
+}
+
+.vt-ai .section-title{
+	margin-bottom: 20px;
+}
+
+/* The brand blue is too dark to read on the dark surface */
+.vt-ai .section-title h3,
+.vt-ai .section-title h2 span,
+.vt-ai .vt-ai-sub span,
+.vt-ai .vt-stack-thread em{
+	color: var(--accent-on-dark);
+}
+
+.vt-ai .vt-stack-thread-fill{
+	background: var(--accent-on-dark);
+}
+
+.vt-ai-sub{
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 1.2em;
+	letter-spacing: -0.03em;
+	color: rgba(255, 255, 255, 0.9);
+	margin-bottom: 30px;
+}
+
+.vt-ai-sub span{
+	color: var(--accent-color);
+}
+
+.vt-stack{
+	--thread-x: 78%;
+	--progress: 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding: 10px 0;
+}
+
+.vt-layer{
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 22px;
+	padding: 22px 26px;
+	border: 1px solid var(--dark-line);
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.03);
+	transition: border-color 0.5s, background-color 0.5s;
+}
+
+.vt-layer-base{
+	background: rgba(255, 255, 255, 0.07);
+}
+
+.vt-layer strong{
+	display: block;
+	font-size: 19px;
+	color: var(--white-color);
+	margin-bottom: 2px;
+}
+
+.vt-layer small{
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.vt-layer-idx{
+	font-size: 13px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.35);
+}
+
+.vt-node{
+	position: absolute;
+	left: var(--thread-x);
+	top: 50%;
+	width: 14px;
+	height: 14px;
+	margin: -7px 0 0 -7px;
+	border-radius: 50%;
+	background: var(--dark-surface);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	z-index: 2;
+	transition: background-color 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+
+.vt-layer.is-lit{
+	border-color: rgba(18, 131, 255, 0.45);
+}
+
+.vt-layer.is-lit .vt-node{
+	background: var(--accent-on-dark);
+	border-color: var(--accent-on-dark);
+	box-shadow: 0 0 0 6px rgba(18, 131, 255, 0.2);
+}
+
+.vt-stack-thread{
+	position: absolute;
+	top: -30px;
+	bottom: -10px;
+	left: var(--thread-x);
+	width: 2px;
+	margin-left: -1px;
+	background: var(--dark-line);
+	z-index: 1;
+}
+
+.vt-stack-thread-fill{
+	position: absolute;
+	inset: 0;
+	background: var(--accent-color);
+	transform-origin: bottom;
+	transform: scaleY(var(--progress));
+}
+
+.vt-stack-thread em{
+	position: absolute;
+	top: 0;
+	left: 14px;
+	white-space: nowrap;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--accent-color);
+}
+
+/************************************/
+/***       10. Methodology        ***/
+/************************************/
+
+.vt-method{
+	padding: 120px 0;
+}
+
+.vt-method .section-row p{
+	margin-bottom: 16px;
+}
+
+.vt-chips{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-chips li{
+	font-size: 14px;
+	font-weight: 700;
+	padding: 6px 14px;
+	border-radius: 100px;
+	background: var(--secondary-color);
+	color: var(--primary-color);
+}
+
+.vt-steps{
+	--progress: 0;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 30px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-steps-track{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	right: calc((100% - 120px) / 5 - 30px);
+	height: 2px;
+	background: var(--divider-color);
+}
+
+.vt-steps-fill{
+	position: absolute;
+	inset: 0;
+	background: var(--accent-color);
+	transform-origin: left;
+	transform: scaleX(var(--progress));
+}
+
+.vt-step{
+	position: relative;
+	z-index: 1;
+}
+
+.vt-step-dot{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	margin-bottom: 30px;
+	border-radius: 50%;
+	font-weight: 700;
+	color: var(--text-color);
+	background: var(--white-color);
+	border: 2px solid var(--divider-color);
+	transition: background-color 0.4s, color 0.4s, border-color 0.4s, transform 0.5s var(--ease-out);
+}
+
+.vt-step h3{
+	font-size: 26px;
+	margin-bottom: 14px;
+	transition: color 0.4s;
+	color: var(--text-color);
+}
+
+.vt-step p{
+	margin: 0;
+	opacity: 0.6;
+	transition: opacity 0.5s;
+}
+
+.vt-step.is-active .vt-step-dot{
+	background: var(--accent-color);
+	border-color: var(--accent-color);
+	color: var(--white-color);
+	transform: scale(1.06);
+}
+
+.vt-step.is-active h3{
+	color: var(--primary-color);
+}
+
+.vt-step.is-active p{
+	opacity: 1;
+}
+
+/************************************/
+/***       11. Why Ventum         ***/
+/************************************/
+
+.vt-why .section-title h2{
+	max-width: 900px;
+}
+
+.vt-board-panel{
+	padding: 50px;
+	margin-bottom: 30px;
+}
+
+.vt-board-copy h3{
+	font-size: 32px;
+	letter-spacing: -0.03em;
+	margin: 16px 0;
+}
+
+.vt-board-copy p{
+	margin: 0;
+}
+
+.vt-live{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--accent-color);
+}
+
+.vt-live i{
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--accent-color);
+	animation: vt-pulse 1.8s ease-out infinite;
+}
+
+@keyframes vt-pulse{
+	0%{ box-shadow: 0 0 0 0 rgba(0, 98, 221, 0.5); }
+	100%{ box-shadow: 0 0 0 10px rgba(0, 98, 221, 0); }
+}
+
+.vt-board{
+	padding: 22px;
+	border-radius: 24px;
+	background: var(--secondary-color);
+}
+
+.vt-board-head{
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 18px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--primary-color);
+}
+
+.vt-board-progress{
+	flex: 1;
+	height: 6px;
+	border-radius: 3px;
+	background: var(--divider-color);
+	overflow: hidden;
+}
+
+.vt-board-progress span{
+	display: block;
+	height: 100%;
+	width: 0;
+	border-radius: 3px;
+	background: var(--accent-color);
+	transition: width 0.8s var(--ease-out);
+}
+
+.vt-board-pct{
+	min-width: 38px;
+	text-align: end;
+	font-variant-numeric: tabular-nums;
+}
+
+.vt-board-cols{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 12px;
+}
+
+.vt-col{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	min-height: 200px;
+	padding: 12px;
+	border-radius: 16px;
+	background: var(--white-color);
+}
+
+.vt-col h4{
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-color);
+	margin-bottom: 4px;
+}
+
+.vt-ticket{
+	padding: 10px 12px;
+	border-radius: 10px;
+	border: 1px solid var(--divider-color);
+	background: var(--white-color);
+}
+
+.vt-ticket b{
+	display: block;
+	font-size: 13px;
+	line-height: 1.3em;
+	color: var(--primary-color);
+}
+
+.vt-ticket em{
+	display: inline-block;
+	margin-top: 6px;
+	font-style: normal;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 1px 8px;
+	border-radius: 10px;
+	background: var(--secondary-color);
+	color: var(--text-color);
+}
+
+.vt-ticket.is-moving{
+	border-color: var(--accent-secondary);
+	box-shadow: 0 10px 24px -14px rgba(18, 131, 255, 0.6);
+	position: relative;
+	z-index: 2;
+}
+
+.vt-col[data-col="3"] .vt-ticket b{
+	text-decoration: line-through;
+	text-decoration-color: var(--text-color);
+	color: var(--text-color);
+}
+
+.vt-why .why-choose-us-item{
+	padding: 34px;
+	transition: transform 0.5s var(--ease-out);
+}
+
+.vt-why .why-choose-us-item:hover{
+	transform: translateY(-6px);
+}
+
+.vt-why .why-choose-us-item .icon-box{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 52px;
+	height: 52px;
+	margin-bottom: 26px;
+	border-radius: 14px;
+	font-size: 20px;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+	transition: transform 0.5s var(--ease-out);
+}
+
+.vt-why .why-choose-us-item:hover .icon-box{
+	transform: rotate(-10deg);
+}
+
+.vt-why .why-choose-us-item h3{
+	font-size: 22px;
+	text-transform: none;
+	margin-bottom: 14px;
+}
+
+/************************************/
+/***         12. Contact          ***/
+/************************************/
+
+.contact-us.vt-contact{
+	padding: 120px 0;
+}
+
+.vt-contact .contact-detail-body p{
+	font-size: 18px;
+}
+
+.vt-mail{
+	padding: 26px 30px;
+	border-radius: 24px;
+	background: var(--dark-surface);
+}
+
+.vt-mail span{
+	display: block;
+	color: rgba(255, 255, 255, 0.6);
+	margin-bottom: 4px;
+}
+
+.vt-mail a{
+	font-size: 26px;
+	font-weight: 700;
+	color: var(--white-color);
+	background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 2px;
+	transition: background-size 0.4s var(--ease-out), color 0.3s;
+}
+
+.vt-mail a:hover{
+	color: var(--accent-on-dark);
+	background-size: 100% 2px;
+}
+
+.vt-contact .contact-form label,
+.vt-contact .contact-form legend{
+	display: block;
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--primary-color);
+	margin-bottom: 8px;
+}
+
+.vt-contact .contact-form legend{
+	float: none;
+	margin-bottom: 12px;
+}
+
+.vt-contact .contact-form label small{
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+.vt-contact .contact-form .form-control{
+	border: 1px solid transparent;
+	transition: border-color 0.3s;
+}
+
+.vt-contact .contact-form .form-control:focus{
+	border-color: var(--accent-color);
+}
+
+.vt-contact .contact-form .is-invalid .form-control{
+	border-color: var(--error-color);
+}
+
+.vt-options{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.vt-contact .vt-options label{
+	margin: 0;
+	cursor: pointer;
+}
+
+.vt-options input{
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.vt-options span{
+	display: inline-block;
+	padding: 10px 18px;
+	border-radius: 100px;
+	border: 1px solid var(--divider-color);
+	background: var(--white-color);
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--primary-color);
+	transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.3s var(--ease-out);
+}
+
+.vt-options label:hover span{
+	border-color: var(--primary-color);
+}
+
+.vt-options input:checked + span{
+	background: var(--primary-color);
+	border-color: var(--primary-color);
+	color: var(--white-color);
+	transform: translateY(-2px);
+}
+
+.vt-error{
+	display: none;
+	margin-top: 6px;
+	font-size: 14px;
+	color: var(--error-color);
+}
+
+.is-invalid > .vt-error{
+	display: block;
+}
+
+.vt-hp{
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.vt-contact button.btn-default:disabled{
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.vt-form-status{
+	margin-top: 16px;
+	font-weight: 700;
+}
+
+.vt-form-status.is-success{
+	color: #1E8A4C;
+}
+
+.vt-form-status.is-error{
+	color: var(--error-color);
+}
+
+/************************************/
+/***         13. Footer           ***/
+/************************************/
+
+.vt-brand-footer{
+	margin-bottom: 24px;
+}
+
+.footer-about p{
+	max-width: 420px;
+}
+
+.footer-about ul li a.vt-lower{
+	text-transform: none;
+}
+
+.footer-links ul li{
+	text-transform: none;
+}
+
+/************************************/
+/***       14. Responsive         ***/
+/************************************/
+
+@media only screen and (max-width: 1199px){
+	.hero-layout-2 .section-title h1.vt-hero-title{
+		font-size: 64px;
+	}
+}
+
+@media only screen and (max-width: 991px){
+	[id]{
+		scroll-margin-top: 70px;
+	}
+
+	.vt-sticky{
+		position: static;
+	}
+
+	.vt-section-note{
+		text-align: start;
+		margin-top: 16px;
+	}
+
+	.hero.vt-hero{
+		padding: 80px 0 120px;
+	}
+
+	.hero-layout-2 .section-title h1.vt-hero-title{
+		font-size: 50px;
+	}
+
+	.vt-clients.exclusive-partners,
+	.vt-problems,
+	.vt-industry,
+	.vt-ai,
+	.vt-method,
+	.contact-us.vt-contact{
+		padding: 60px 0;
+	}
+
+	.vt-problem-list{
+		margin-top: 20px;
+	}
+
+	.vt-problem{
+		padding: 30px;
+		gap: 20px;
+	}
+
+	.vt-problem h3{
+		font-size: 22px;
+	}
+
+	.vt-edu-visual{
+		margin: 0 0 50px;
+		padding: 24px;
+	}
+
+	.vt-edu-badge{
+		right: 10px;
+		top: auto;
+		bottom: -45px;
+		transform: none;
+		width: 100px;
+		height: 100px;
+	}
+
+	.vt-build .section-btn{
+		text-align: start;
+		margin-top: 20px;
+	}
+
+	.vt-cap-top{
+		margin-bottom: 30px;
+	}
+
+	.vt-ai .section-title,
+	.vt-ai p:last-child{
+		margin-bottom: 30px;
+	}
+
+	.vt-ai-sub{
+		font-size: 24px;
+	}
+
+	.vt-method .section-row .col-lg-5{
+		margin-top: 20px;
+	}
+
+	.vt-steps{
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	.vt-steps-track{
+		top: 30px;
+		bottom: 30px;
+		left: 29px;
+		right: auto;
+		width: 2px;
+		height: auto;
+	}
+
+	.vt-steps-fill{
+		transform-origin: top;
+		transform: scaleY(var(--progress));
+	}
+
+	.vt-step{
+		padding-left: 90px;
+		min-height: 60px;
+	}
+
+	.vt-step-dot{
+		position: absolute;
+		left: 0;
+		top: 0;
+		margin: 0;
+	}
+
+	.vt-step h3{
+		font-size: 22px;
+		padding-top: 16px;
+		margin-bottom: 8px;
+	}
+
+	.vt-board-panel{
+		padding: 30px;
+	}
+
+	.vt-board-copy{
+		margin-bottom: 30px;
+	}
+
+	.vt-board-copy h3{
+		font-size: 26px;
+	}
+
+	.vt-contact .contact-details{
+		margin-bottom: 40px;
+	}
+}
+
+@media only screen and (max-width: 767px){
+	.hero-layout-2 .section-title h1.vt-hero-title{
+		font-size: 38px;
+	}
+
+	.vt-hero .hero-body p{
+		font-size: 17px;
+	}
+
+	.vt-hero .hero-footer{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.vt-hero.hero .hero-layout-2 .hero-footer .btn-default{
+		margin: 0;
+	}
+
+	.vt-scroll-cue{
+		display: none;
+	}
+
+	.vt-client{
+		width: 280px;
+		height: 240px;
+		padding: 24px;
+	}
+
+	.vt-client-name{
+		font-size: 24px;
+	}
+
+	.vt-client-desc{
+		font-size: 14px;
+	}
+
+	.vt-problem{
+		flex-direction: column;
+		gap: 8px;
+		padding: 24px;
+		border-radius: 24px;
+	}
+
+	.vt-edu-cards{
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 6px;
+	}
+
+	.vt-edu-side{
+		display: none;
+	}
+
+	.vt-edu-card strong{
+		font-size: 16px;
+	}
+
+	.vt-cap-cta .service-content-title h2{
+		font-size: 24px;
+	}
+
+	.vt-stack{
+		--thread-x: calc(100% - 28px);
+	}
+
+	.vt-layer{
+		padding: 18px 50px 18px 18px;
+		gap: 14px;
+	}
+
+	.vt-layer strong{
+		font-size: 16px;
+	}
+
+	.vt-layer small{
+		font-size: 13px;
+	}
+
+	.vt-stack-thread em{
+		left: auto;
+		right: 12px;
+	}
+
+	.vt-board-panel{
+		padding: 20px;
+	}
+
+	.vt-board{
+		padding: 14px;
+	}
+
+	.vt-board-cols{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.vt-col{
+		min-height: 130px;
+	}
+
+	.vt-mail a{
+		font-size: 22px;
+	}
+
+	.contact-form-box{
+		padding: 24px;
+	}
+}
+
+/************************************/
+/***     15. Reduced motion       ***/
+/************************************/
+
+@media (prefers-reduced-motion: reduce){
+	html{
+		scroll-behavior: auto;
+	}
+
+	.vt-marquee{
+		-webkit-mask-image: none;
+		mask-image: none;
+		overflow-x: auto;
+	}
+
+	.vt-marquee-track{
+		animation: none;
+	}
+
+	.vt-marquee-track[aria-hidden="true"]{
+		display: none;
+	}
+
+	.vt-edu-badge svg,
+	.vt-scroll-cue span,
+	.vt-live i,
+	.scrolling-content{
+		animation: none;
+	}
+
+	.vt-problem,
+	.vt-step p{
+		opacity: 1;
+		transform: none;
+	}
+
+	.vt-edu-meter span,
+	.vt-edu-chart span{
+		transform: none;
+		transition: none;
+	}
+}
