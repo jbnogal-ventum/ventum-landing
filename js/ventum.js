@@ -217,14 +217,6 @@
 		document.addEventListener("visibilitychange", function () {
 			setRunning(!document.hidden);
 		});
-
-		/* Ghost V drifts slightly on scroll */
-		if (hasST && !reduceMotion) {
-			gsap.to(".vt-hero-ghost", {
-				yPercent: 18, ease: "none",
-				scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true }
-			});
-		}
 	})();
 
 	/* ------------------------------------------------------------------

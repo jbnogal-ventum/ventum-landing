@@ -199,21 +199,6 @@ html{
 	pointer-events: none;
 }
 
-.vt-hero-ghost{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: min(760px, 90vw);
-	aspect-ratio: 1;
-	transform: translate(-50%, -50%);
-	background: var(--accent-color);
-	-webkit-mask: url(../images/ventum-wing.png) center / contain no-repeat;
-	mask: url(../images/ventum-wing.png) center / contain no-repeat;
-	opacity: 0.045;
-	z-index: 1;
-	pointer-events: none;
-}
-
 .hero-layout-2 .section-title h1.vt-hero-title{
 	font-size: 76px;
 	letter-spacing: -0.045em;
