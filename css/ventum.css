@@ -20,6 +20,7 @@
 13. Footer
 14. Responsive
 15. Reduced motion
+16. Floating booking button
 -------------------------------------------------------------------------------------- */
 
 /************************************/
@@ -53,6 +54,14 @@ html{
 .vt-section-note{
 	margin: 0;
 	text-align: end;
+}
+
+/* Left-aligned text blocks (title + body copy) sit slightly in from the container edge */
+.vt-problems .vt-sticky,
+.vt-industry-content,
+.vt-ai .col-lg-5 > *,
+.vt-contact .contact-details{
+	margin-left: 24px;
 }
 
 .btn-default.btn-ghost{
@@ -903,7 +912,7 @@ html{
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
-	padding: 10px 0;
+	padding: 36px 0 10px;
 }
 
 .vt-layer{
@@ -966,8 +975,9 @@ html{
 
 .vt-stack-thread{
 	position: absolute;
-	top: -30px;
-	bottom: -10px;
+	/* Runs exactly from the top of the first card to the bottom of the last (matches .vt-stack padding) */
+	top: 36px;
+	bottom: 10px;
 	left: var(--thread-x);
 	width: 2px;
 	margin-left: -1px;
@@ -979,13 +989,14 @@ html{
 	position: absolute;
 	inset: 0;
 	background: var(--accent-color);
-	transform-origin: bottom;
+	transform-origin: top;
 	transform: scaleY(var(--progress));
 }
 
 .vt-stack-thread em{
 	position: absolute;
-	top: 0;
+	bottom: 100%;
+	margin-bottom: 10px;
 	left: 14px;
 	white-space: nowrap;
 	font-style: normal;
@@ -1246,10 +1257,31 @@ html{
 	z-index: 2;
 }
 
+/* Done tickets collapse to a single line so a full "Done" column stays short */
+.vt-col[data-col="3"]{
+	gap: 6px;
+}
+
+.vt-col[data-col="3"] .vt-ticket{
+	padding: 7px 12px;
+}
+
+.vt-col[data-col="3"] .vt-ticket em{
+	display: none;
+}
+
 .vt-col[data-col="3"] .vt-ticket b{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	text-decoration: line-through;
 	text-decoration-color: var(--text-color);
 	color: var(--text-color);
+}
+
+/* Cards carry a 30px bottom margin for row spacing; cancel it after the last row */
+.vt-why-grid{
+	margin-bottom: -30px;
 }
 
 .vt-why .why-choose-us-item{
@@ -1606,12 +1638,35 @@ html{
 		font-size: 38px;
 	}
 
-	.hero.vt-hero{
-		padding: 20px 0 60px;
+	.vt-section-note{
+		text-align: center;
 	}
 
-	.vt-hero .hero-body p{
-		font-size: 17px;
+	.vt-problems .vt-sticky,
+	.vt-industry-content,
+	.vt-ai .col-lg-5 > *,
+	.vt-contact .contact-details{
+		margin-left: 14px;
+	}
+
+	.hero.vt-hero{
+		padding: 50px 0 60px;
+	}
+
+	/* Keep the mobile hero short: title and button only */
+	.vt-hero .hero-body{
+		display: none;
+	}
+
+	/* Same mobile indent as the other left-aligned text blocks */
+	.vt-hero .section-title,
+	.vt-hero .hero-footer{
+		margin-left: 14px;
+	}
+
+	.vt-system{
+		width: calc(100% - 14px);
+		margin-left: 14px;
 	}
 
 	.vt-scroll-cue{
@@ -1745,5 +1800,69 @@ html{
 	.vt-edu-chart span{
 		transform: none;
 		transition: none;
+	}
+}
+
+/************************************/
+/***  16. Floating booking button  ***/
+/************************************/
+
+/* Always-visible Calendly link; sits under the intro overlay (z-index 2000) */
+.vt-book{
+	position: fixed;
+	right: 24px;
+	bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+	z-index: 1500;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 14px 22px;
+	border-radius: 100px;
+	background: var(--accent-color);
+	color: var(--white-color);
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1;
+	text-transform: capitalize;
+	box-shadow: 0 14px 30px -10px rgba(0, 98, 221, 0.55);
+	transition: transform 0.3s var(--ease-out), background-color 0.3s, box-shadow 0.3s;
+}
+
+.vt-book i{
+	font-size: 17px;
+}
+
+.vt-book:hover,
+.vt-book:focus-visible{
+	color: var(--white-color);
+	background: var(--accent-secondary);
+	transform: translateY(-3px);
+	box-shadow: 0 18px 34px -10px rgba(0, 98, 221, 0.65);
+}
+
+.vt-book:focus-visible{
+	outline: 2px solid var(--primary-color);
+	outline-offset: 3px;
+}
+
+@media only screen and (max-width: 767px){
+	.vt-book{
+		right: 16px;
+		bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+		padding: 12px 18px;
+		font-size: 14px;
+	}
+
+	/* Keep the last footer line clear of the floating button */
+	.main-footer{
+		padding-bottom: 70px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce){
+	.vt-book,
+	.vt-book:hover{
+		transition: none;
+		transform: none;
 	}
 }

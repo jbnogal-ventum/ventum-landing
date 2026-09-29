@@ -262,7 +262,6 @@
 		markers: ".vt-node",
 		activeTarget: ".vt-layer",
 		activeClass: "is-lit",
-		fromBottom: true,
 		start: "top 80%",
 		end: "bottom 40%"
 	});
@@ -332,6 +331,22 @@
 			var done = cols[last].querySelectorAll(".vt-ticket").length === tickets.length;
 			timer = setTimeout(function () { step(); schedule(); }, done ? 2600 : 1700);
 		}
+
+		/* Lock the board at its tallest state (every ticket in one column) so moving
+		   tickets never changes its height and pushes the content below it around */
+		var colsEl = boardEl.querySelector(".vt-board-cols");
+		function lockHeight() {
+			var current = cols.map(function (c) { return $all(".vt-ticket", c); });
+			colsEl.style.minHeight = "";
+			tickets.forEach(function (t) { cols[last].appendChild(t); });
+			var h = colsEl.offsetHeight;
+			current.forEach(function (list, i) { list.forEach(function (t) { cols[i].appendChild(t); }); });
+			colsEl.style.minHeight = h + "px";
+		}
+		lockHeight();
+		window.addEventListener("resize", lockHeight);
+		window.addEventListener("load", lockHeight);
+		if (document.fonts && document.fonts.ready) document.fonts.ready.then(lockHeight);
 
 		render();
 		if (reduceMotion) return;
