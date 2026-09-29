@@ -156,9 +156,15 @@
 		});		
 	}
 	
-	if ($('.text-anime-style-3').length) {		
+	/* Split into lines only once the web font is in: measuring with the fallback font
+	   produces lines that no longer fit afterwards and leave single words stranded */
+	if ($('.text-anime-style-3').length) {
+		(document.fonts ? document.fonts.ready : Promise.resolve()).then(initTextAnimeStyle3);
+	}
+
+	function initTextAnimeStyle3() {
 		let	animatedTextElements = document.querySelectorAll('.text-anime-style-3');
-		
+
 		 animatedTextElements.forEach((element) => {
 			//Reset if needed
 			if (element.animation) {

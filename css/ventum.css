@@ -183,6 +183,26 @@ html{
 	opacity: 0;
 }
 
+/* Dropdowns also open for keyboard users, not only on hover */
+.main-menu ul li:focus-within > ul{
+	visibility: visible;
+	opacity: 1;
+	transform: scaleY(1);
+	padding: 5px 0;
+}
+
+/* "Open in a new tab" links */
+.vt-ext{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.vt-ext i{
+	font-size: 11px;
+	opacity: 0.8;
+}
+
 /************************************/
 /***          04. Hero            ***/
 /************************************/

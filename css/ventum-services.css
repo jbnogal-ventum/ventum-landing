@@ -1,0 +1,997 @@
+/* ----------------------------------------------------------------------------------------
+* Ventum Software - Services page layer
+* Loaded after custom.css and ventum.css. Reuses their tokens (colors, spacing, buttons,
+* section titles) and only adds what the services page needs.
+* ---------------------------------------------------------------------------------------- */
+/* INDEX
+----------------------------------------------------------------------------------------
+01. Shared
+02. Hero + service flow
+03. Mission
+04. Capabilities
+05. AI approach
+06. Difference
+07. Responsive
+08. Reduced motion
+-------------------------------------------------------------------------------------- */
+
+/************************************/
+/***          01. Shared          ***/
+/************************************/
+
+.main-menu ul li a.is-current{
+	color: var(--accent-color);
+}
+
+/************************************/
+/***   02. Hero + service flow    ***/
+/************************************/
+
+.vt-sv-hero .section-title h1.vt-hero-title{
+	font-size: 60px;
+}
+
+/* Service flow: two columns of cards loop vertically in opposite directions.
+   Each .vt-flow-move holds the track twice (JS appends the copy), so moving it by
+   -50% lands exactly on the start again. Edges fade out through a mask. */
+.vt-flow{
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	width: 100%;
+	max-width: 560px;
+	height: 620px;
+	margin-left: auto;
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+	mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+}
+
+.vt-flow-glow{
+	position: absolute;
+	inset: 20% 10%;
+	border-radius: 50%;
+	background: radial-gradient(closest-side, rgba(18, 131, 255, 0.2), rgba(18, 131, 255, 0));
+	filter: blur(10px);
+}
+
+.vt-flow-col{
+	position: relative;
+	min-width: 0;
+}
+
+.vt-flow-track{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-bottom: 20px;
+}
+
+.vt-js .vt-flow-move{
+	animation: vt-flow 36s linear infinite;
+}
+
+/* Second column runs the other way, slightly slower, so the two never sync up */
+.vt-js .vt-flow-col-down .vt-flow-move{
+	animation-direction: reverse;
+	animation-duration: 42s;
+}
+
+@keyframes vt-flow{
+	from{ transform: translateY(0); }
+	to{ transform: translateY(-50%); }
+}
+
+.vt-dcard{
+	padding: 16px 18px;
+	border-radius: 18px;
+	background: var(--white-color);
+	border: 1px solid rgba(225, 228, 235, 0.8);
+	box-shadow: 0 20px 36px -26px rgba(21, 22, 27, 0.3);
+	font-size: 12px;
+	color: var(--primary-color);
+}
+
+.vt-dcard-head{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+
+.vt-dcard-head i{
+	display: grid;
+	place-items: center;
+	width: 26px;
+	height: 26px;
+	flex: 0 0 26px;
+	border-radius: 8px;
+	font-size: 12px;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+}
+
+.vt-dcard-head b{
+	font-size: 13px;
+	line-height: 1.2;
+}
+
+.vt-dcard-head em{
+	margin-left: auto;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-style: normal;
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+}
+
+.vt-dcard-bars{
+	display: flex;
+	align-items: flex-end;
+	gap: 6px;
+	height: 56px;
+}
+
+.vt-dcard-bars span{
+	flex: 1;
+	height: var(--h);
+	border-radius: 5px;
+	background: var(--accent-soft);
+}
+
+.vt-dcard-bars span:last-child{
+	background: var(--accent-color);
+}
+
+.vt-dcard-rows{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-dcard-rows li{
+	display: grid;
+	grid-template-columns: 62px 1fr;
+	align-items: center;
+	gap: 8px;
+	margin-top: 8px;
+	color: var(--text-color);
+}
+
+.vt-dcard-rows i{
+	position: relative;
+	height: 6px;
+	border-radius: 3px;
+	background: var(--divider-color);
+	overflow: hidden;
+}
+
+.vt-dcard-rows i::after{
+	content: '';
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: var(--w);
+	border-radius: 3px;
+	background: var(--accent-color);
+}
+
+.vt-dcard-dark{
+	background: var(--dark-surface);
+	border-color: var(--dark-surface);
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.vt-dcard-dark .vt-dcard-head b{
+	color: var(--white-color);
+}
+
+.vt-dcard-dark .vt-dcard-head i{
+	color: var(--white-color);
+	background: var(--accent-color);
+}
+
+.vt-dcard p{
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.vt-typing{
+	display: inline-flex;
+	gap: 3px;
+	margin-left: 6px;
+	vertical-align: middle;
+}
+
+.vt-typing i{
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: var(--accent-on-dark);
+	animation: vt-typing 1.2s ease-in-out infinite;
+}
+
+.vt-typing i:nth-child(2){ animation-delay: 0.15s; }
+.vt-typing i:nth-child(3){ animation-delay: 0.3s; }
+
+@keyframes vt-typing{
+	0%, 60%, 100%{ opacity: 0.25; transform: translateY(0); }
+	30%{ opacity: 1; transform: translateY(-3px); }
+}
+
+.vt-dcard-status{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--text-color);
+}
+
+.vt-dcard-status i{
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #1FB26B;
+	animation: vt-sync 1.8s ease-out infinite;
+}
+
+@keyframes vt-sync{
+	0%{ box-shadow: 0 0 0 0 rgba(31, 178, 107, 0.5); }
+	100%{ box-shadow: 0 0 0 8px rgba(31, 178, 107, 0); }
+}
+
+.vt-dcard-kpi strong{
+	display: block;
+	font-size: 26px;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	margin-bottom: 6px;
+}
+
+.vt-dcard-kpi svg{
+	display: block;
+	width: 100%;
+	height: 30px;
+}
+
+.vt-dcard-kpi path{
+	fill: none;
+	stroke: var(--accent-color);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.vt-dcard-mobile{
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.vt-dcard-phone{
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex: 0 0 40px;
+	width: 40px;
+	aspect-ratio: 9 / 16;
+	padding: 12px 5px 5px;
+	border: 2px solid var(--primary-color);
+	border-radius: 10px;
+}
+
+.vt-dcard-phone span{
+	height: 5px;
+	border-radius: 3px;
+	background: var(--accent-soft);
+}
+
+.vt-dcard-phone span:first-child{
+	background: var(--accent-color);
+	width: 60%;
+}
+
+.vt-dcard-mobile b{
+	display: block;
+	font-size: 13px;
+	margin-bottom: 2px;
+}
+
+.vt-dcard-mobile p{
+	color: var(--text-color);
+}
+
+.vt-dcard-checks{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-dcard-checks li{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 6px;
+	color: var(--text-color);
+}
+
+.vt-dcard-checks i{
+	display: grid;
+	place-items: center;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	font-size: 8px;
+	color: var(--white-color);
+	background: var(--accent-color);
+}
+
+.vt-dcard-swatches{
+	display: flex;
+	gap: 6px;
+}
+
+.vt-dcard-swatches i{
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: var(--accent-color);
+}
+
+.vt-dcard-swatches i:nth-child(2){ background: var(--accent-secondary); }
+.vt-dcard-swatches i:nth-child(3){ background: var(--primary-color); }
+.vt-dcard-swatches i:nth-child(4){ background: var(--accent-soft); }
+
+/************************************/
+/***         03. Mission          ***/
+/************************************/
+
+.vt-sv-mission{
+	padding: 120px 0;
+}
+
+.vt-sv-mission .section-title{
+	margin-bottom: 0;
+}
+
+.vt-sv-mission .section-title h2{
+	font-size: 60px;
+}
+
+.vt-sv-mission-copy p:last-child{
+	margin-bottom: 0;
+}
+
+.vt-sv-values{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	list-style: none;
+	margin: 60px 0 0;
+	padding: 40px 0 0;
+	border-top: 1px solid var(--divider-color);
+}
+
+.vt-sv-values li{
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 12px 22px;
+	border-radius: 100px;
+	background: var(--secondary-color);
+	font-weight: 700;
+	color: var(--primary-color);
+}
+
+.vt-sv-values i{
+	color: var(--accent-color);
+}
+
+/************************************/
+/***       04. Capabilities       ***/
+/************************************/
+
+.page-service-single.vt-sv-caps{
+	background: var(--secondary-color);
+	padding: 120px 0;
+}
+
+.vt-sv-caps-intro{
+	max-width: 640px;
+	margin: 20px 0 0;
+	font-size: 18px;
+}
+
+.vt-capability{
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 36px;
+	align-items: start;
+	padding: 40px;
+	margin-bottom: 24px;
+	border-radius: 30px;
+	background: var(--white-color);
+	border: 1px solid transparent;
+	transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.vt-capability:last-child{
+	margin-bottom: 0;
+}
+
+.vt-capability.is-active{
+	border-color: rgba(0, 98, 221, 0.25);
+	box-shadow: 0 24px 50px -30px rgba(0, 98, 221, 0.35);
+}
+
+/* Square illustration on the left, text in the right column */
+.vt-capability-media{
+	margin: 0;
+	aspect-ratio: 1;
+	border-radius: 22px;
+	overflow: hidden;
+	background: var(--secondary-color);
+}
+
+.vt-capability-media img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.vt-capability-body{
+	min-width: 0;
+}
+
+.vt-capability-num{
+	display: block;
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--text-color);
+}
+
+.vt-capability h3{
+	font-size: 28px;
+	letter-spacing: -0.02em;
+	margin-bottom: 14px;
+}
+
+.vt-capability p{
+	margin-bottom: 10px;
+}
+
+.vt-capability h4{
+	margin: 26px 0 12px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-color);
+}
+
+.vt-tags{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-tags li{
+	padding: 7px 14px;
+	border-radius: 100px;
+	background: var(--secondary-color);
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--primary-color);
+}
+
+/* AI gets the dark treatment: it runs through everything else.
+   No image on this card, so its text takes the full width */
+.vt-capability.vt-capability-featured{
+	grid-template-columns: 1fr;
+}
+
+.vt-capability-featured{
+	background: var(--dark-surface);
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.vt-capability-featured h3{
+	color: var(--white-color);
+}
+
+.vt-capability-featured .vt-capability-num,
+.vt-capability-featured h4{
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.vt-capability-featured .vt-capability-lead{
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--white-color);
+}
+
+.vt-capability-featured .vt-tags li{
+	background: rgba(255, 255, 255, 0.08);
+	color: var(--white-color);
+}
+
+.vt-sv-sidebar{
+	position: sticky;
+	top: 110px;
+}
+
+.vt-sv-sidebar .services-list-box{
+	background: var(--white-color);
+}
+
+.vt-sv-sidebar .services-list-box ul li{
+	margin-bottom: 16px;
+}
+
+.vt-sv-sidebar .services-list-box ul li a{
+	display: block;
+	transition: color 0.3s;
+}
+
+.vt-sv-sidebar .services-list-box ul li a.is-active{
+	color: var(--primary-color);
+	font-weight: 700;
+}
+
+/************************************/
+/***        05. AI approach       ***/
+/************************************/
+
+.vt-sv-ai .section-title h2{
+	font-size: 56px;
+}
+
+.vt-sv-ai-panel{
+	padding: 40px;
+	border-radius: 30px;
+	border: 1px solid var(--dark-line);
+	background: rgba(255, 255, 255, 0.03);
+}
+
+.vt-sv-ai-panel h4{
+	font-size: 20px;
+	color: var(--white-color);
+	margin-bottom: 24px;
+}
+
+.vt-sv-ai-list{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-sv-ai-list li{
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 14px;
+	border-radius: 14px;
+	border: 1px solid var(--dark-line);
+	background: rgba(255, 255, 255, 0.04);
+	font-size: 15px;
+	line-height: 1.3;
+	color: var(--white-color);
+	transition: opacity 0.5s, border-color 0.5s, background-color 0.5s;
+	transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.vt-sv-ai-list i{
+	display: grid;
+	place-items: center;
+	flex: 0 0 22px;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	font-size: 10px;
+	color: var(--white-color);
+	background: var(--accent-on-dark);
+	transition: background-color 0.5s;
+	transition-delay: inherit;
+}
+
+/* With JS, the list "switches on" item by item when it scrolls into view */
+.vt-js .vt-sv-ai-list li{
+	opacity: 0.35;
+}
+
+.vt-js .vt-sv-ai-list i{
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.vt-js .vt-sv-ai-list.is-inview li{
+	opacity: 1;
+	border-color: rgba(18, 131, 255, 0.35);
+}
+
+.vt-js .vt-sv-ai-list.is-inview i{
+	background: var(--accent-on-dark);
+}
+
+.vt-sv-ai-close{
+	margin-top: 90px;
+	padding-top: 60px;
+	border-top: 1px solid var(--dark-line);
+	text-align: center;
+}
+
+.vt-sv-ai-close p{
+	margin: 0;
+	font-size: 26px;
+	line-height: 1.3;
+	color: rgba(255, 255, 255, 0.65);
+}
+
+.vt-sv-ai-close strong{
+	display: inline-block;
+	margin-top: 8px;
+	font-size: 40px;
+	letter-spacing: -0.03em;
+	color: var(--white-color);
+}
+
+/************************************/
+/***        06. Difference        ***/
+/************************************/
+
+/* No bottom padding: the contact section (same white background) follows directly */
+.vt-sv-diff{
+	padding: 120px 0 0;
+}
+
+.vt-sv-diff .section-title h2{
+	font-size: 56px;
+}
+
+.vt-sv-diff .section-row p{
+	margin: 0;
+}
+
+.vt-compare{
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0 12px;
+	margin-top: -12px;
+}
+
+.vt-compare th{
+	padding: 0 28px 4px;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-color);
+	width: 50%;
+}
+
+.vt-compare th:last-child{
+	padding-left: 44px;
+	color: var(--accent-color);
+}
+
+.vt-compare td{
+	padding: 24px 28px;
+	font-size: 18px;
+	vertical-align: middle;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.vt-compare td i{
+	display: inline-grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	margin-right: 14px;
+	border-radius: 50%;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.vt-compare td:first-child{
+	position: relative;
+	border-radius: 20px 0 0 20px;
+	background: var(--secondary-color);
+	color: var(--text-color);
+}
+
+.vt-compare td:first-child i{
+	color: var(--text-color);
+	background: var(--divider-color);
+}
+
+/* Arrow bridging "avoid" to "instead" */
+.vt-compare td:first-child::after{
+	content: '\f061';
+	position: absolute;
+	top: 50%;
+	right: -18px;
+	z-index: 1;
+	display: grid;
+	place-items: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 1px solid var(--divider-color);
+	background: var(--white-color);
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	font-size: 13px;
+	color: var(--accent-color);
+	transform: translateY(-50%);
+}
+
+.vt-compare td:last-child{
+	padding-left: 44px;
+	border-radius: 0 20px 20px 0;
+	background: var(--accent-soft);
+	font-weight: 700;
+	color: var(--primary-color);
+}
+
+.vt-compare td:last-child i{
+	color: var(--white-color);
+	background: var(--accent-color);
+}
+
+.vt-compare tr:hover td:last-child{
+	background: var(--accent-color);
+	color: var(--white-color);
+}
+
+.vt-compare tr:hover td:last-child i{
+	color: var(--accent-color);
+	background: var(--white-color);
+}
+
+/************************************/
+/***        07. Responsive        ***/
+/************************************/
+
+@media only screen and (max-width: 1199px){
+	.vt-capability{
+		grid-template-columns: 160px 1fr;
+		gap: 28px;
+	}
+
+	.vt-dcard{
+		font-size: 11px;
+		padding: 12px 14px;
+	}
+
+	.vt-sv-ai-list{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 991px){
+	.vt-sv-hero .section-title h1.vt-hero-title{
+		font-size: 48px;
+	}
+
+	.vt-flow{
+		margin: 50px auto 0;
+	}
+
+	.vt-sv-mission,
+	.page-service-single.vt-sv-caps{
+		padding: 60px 0;
+	}
+
+	.vt-sv-diff{
+		padding: 60px 0 0;
+	}
+
+	.vt-sv-mission .section-title{
+		margin-bottom: 24px;
+	}
+
+	.vt-sv-mission .section-title h2,
+	.vt-sv-ai .section-title h2,
+	.vt-sv-diff .section-title h2{
+		font-size: 42px;
+	}
+
+	.vt-sv-values{
+		margin-top: 40px;
+		padding-top: 30px;
+	}
+
+	/* The sidebar is a jump list for the long desktop column; not needed when stacked */
+	.vt-sv-sidebar{
+		display: none;
+	}
+
+	.vt-sv-ai-panel{
+		margin-top: 30px;
+	}
+
+	.vt-sv-ai-close{
+		margin-top: 50px;
+		padding-top: 40px;
+	}
+
+	.vt-sv-ai-close p{
+		font-size: 20px;
+	}
+
+	.vt-sv-ai-close strong{
+		font-size: 30px;
+	}
+
+	.vt-sv-diff .section-row p{
+		margin-top: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 767px){
+	.vt-sv-hero .section-title h1.vt-hero-title{
+		font-size: 38px;
+	}
+
+	/* Unlike the home hero, keep the description: it says what this page is about */
+	.vt-sv-hero .hero-body{
+		display: block;
+		margin-left: 14px;
+	}
+
+	.vt-sv-hero .hero-body p{
+		font-size: 17px;
+	}
+
+	/* Shorter flow with tighter spacing on small screens */
+	.vt-flow{
+		height: 460px;
+		gap: 12px;
+	}
+
+	.vt-flow-track{
+		gap: 12px;
+		padding-bottom: 12px;
+	}
+
+	.vt-dcard{
+		padding: 12px 13px;
+		border-radius: 14px;
+	}
+
+	.vt-dcard-rows li{
+		grid-template-columns: 52px 1fr;
+	}
+
+	/* Section titles are centered at this size (template); keep their intro copy with them */
+	.vt-sv-caps-intro,
+	.vt-sv-diff .section-row p{
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	.vt-sv-mission .section-title h2,
+	.vt-sv-ai .section-title h2,
+	.vt-sv-diff .section-title h2{
+		font-size: 34px;
+	}
+
+	.vt-sv-values li{
+		padding: 10px 18px;
+		font-size: 15px;
+	}
+
+	/* Stack: image on top, text below */
+	.vt-capability{
+		grid-template-columns: 1fr;
+		gap: 22px;
+		padding: 28px 24px;
+		border-radius: 24px;
+	}
+
+	.vt-capability-media{
+		width: 140px;
+		border-radius: 18px;
+	}
+
+	.vt-capability h3{
+		font-size: 23px;
+	}
+
+	.vt-tags li{
+		font-size: 13px;
+		padding: 6px 12px;
+	}
+
+	.vt-sv-ai-panel{
+		padding: 24px;
+	}
+
+	.vt-sv-ai-list{
+		grid-template-columns: 1fr;
+	}
+
+	/* Comparison: each row becomes a stacked pair with the arrow pointing down */
+	.vt-compare,
+	.vt-compare tbody,
+	.vt-compare tr,
+	.vt-compare td{
+		display: block;
+		width: 100%;
+	}
+
+	.vt-compare thead{
+		display: none;
+	}
+
+	.vt-compare{
+		border-spacing: 0;
+		margin-top: 10px;
+	}
+
+	.vt-compare tr{
+		margin-bottom: 14px;
+	}
+
+	.vt-compare td{
+		display: flex;
+		align-items: center;
+		padding: 18px 20px;
+		font-size: 16px;
+	}
+
+	.vt-compare td i{
+		flex: 0 0 28px;
+	}
+
+	.vt-compare td:first-child{
+		border-radius: 18px 18px 0 0;
+	}
+
+	.vt-compare td:first-child::after{
+		top: auto;
+		right: auto;
+		bottom: -18px;
+		left: 50%;
+		transform: translateX(-50%) rotate(90deg);
+	}
+
+	.vt-compare td:last-child{
+		padding-left: 20px;
+		padding-top: 24px;
+		border-radius: 0 0 18px 18px;
+	}
+
+}
+
+/************************************/
+/***      08. Reduced motion      ***/
+/************************************/
+
+@media (prefers-reduced-motion: reduce){
+	.vt-js .vt-flow-move,
+	.vt-typing i,
+	.vt-dcard-status i{
+		animation: none;
+	}
+
+	.vt-js .vt-sv-ai-list li{
+		opacity: 1;
+	}
+
+	.vt-js .vt-sv-ai-list i{
+		background: var(--accent-on-dark);
+	}
+}

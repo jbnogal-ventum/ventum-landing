@@ -30,6 +30,11 @@
 	/* Year */
 	$all(".vt-year").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+	/* Menu parents without a destination only open their dropdown; don't jump to the top */
+	$all(".main-menu .submenu > a[href='#']").forEach(function (a) {
+		a.addEventListener("click", function (e) { e.preventDefault(); });
+	});
+
 	/* ------------------------------------------------------------------
 	   Hero title: split into words so they can rise in after the intro
 	------------------------------------------------------------------ */
