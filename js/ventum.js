@@ -30,10 +30,15 @@
 	/* Year */
 	$all(".vt-year").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
-	/* Menu parents without a destination only open their dropdown; don't jump to the top */
-	$all(".main-menu .submenu > a[href='#']").forEach(function (a) {
-		a.addEventListener("click", function (e) { e.preventDefault(); });
-	});
+	/* Menu links without a destination yet (href="#": dropdown parents and placeholder pages)
+	   don't jump to the top. Delegated, so it also covers the cloned mobile menu. */
+	var header = document.querySelector(".main-header");
+	if (header) {
+		header.addEventListener("click", function (e) {
+			var a = e.target.closest("a[href='#']");
+			if (a) e.preventDefault();
+		});
+	}
 
 	/* ------------------------------------------------------------------
 	   Hero title: split into words so they can rise in after the intro
