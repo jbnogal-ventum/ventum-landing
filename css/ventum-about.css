@@ -1,0 +1,563 @@
+/* ----------------------------------------------------------------------------------------
+* Ventum Software - About page layer
+* Loaded after custom.css, ventum.css and ventum-services.css. Reuses their tokens, the home
+* page step timeline (.vt-steps) and the services comparison table (.vt-compare), and only
+* adds what the about page needs.
+* ---------------------------------------------------------------------------------------- */
+/* INDEX
+----------------------------------------------------------------------------------------
+01. Shared
+02. Hero
+03. Origin
+04. Vision
+05. Story
+06. Philosophy
+07. Difference
+08. Team
+09. Responsive
+10. Reduced motion
+-------------------------------------------------------------------------------------- */
+
+/************************************/
+/***          01. Shared          ***/
+/************************************/
+
+/* Rounded photo frame used across the page */
+.vt-ab-photo{
+	margin: 0;
+	border-radius: 30px;
+	overflow: hidden;
+	background: var(--secondary-color);
+}
+
+.vt-ab-photo img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Stand-in for the animated images until they are ready; keeps the frame's size */
+.vt-ab-photo.vt-ab-placeholder{
+	display: grid;
+	place-items: center;
+	border-radius: 30px;
+	border: 2px dashed rgba(0, 98, 221, 0.25);
+	background:
+		radial-gradient(closest-side at 70% 30%, rgba(18, 131, 255, 0.18), rgba(18, 131, 255, 0)),
+		linear-gradient(160deg, var(--white-color), var(--accent-soft));
+}
+
+.vt-ab-placeholder-label{
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 18px;
+	border-radius: 100px;
+	background: var(--white-color);
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--accent-color);
+}
+
+/* Left-aligned text blocks sit slightly in from the container edge, like the other pages */
+.vt-ab-origin-lead,
+.vt-ab-team-copy{
+	margin-left: 24px;
+}
+
+/************************************/
+/***           02. Hero           ***/
+/************************************/
+
+.vt-ab-hero .section-title h1.vt-hero-title{
+	font-size: 60px;
+}
+
+/* Hero scene: the team illustration in front, two screens floating behind it.
+   Positions are percentages of the box, so the composition scales as one. */
+.vt-ab-scene{
+	position: relative;
+	width: 100%;
+	max-width: 580px;
+	aspect-ratio: 1;
+	margin-left: auto;
+}
+
+.vt-ab-scene img{
+	position: absolute;
+	display: block;
+	max-width: none;
+	height: auto;
+}
+
+.vt-ab-scene-glow{
+	position: absolute;
+	inset: 18% 8% 6%;
+	border-radius: 50%;
+	background: radial-gradient(closest-side, rgba(18, 131, 255, 0.18), rgba(18, 131, 255, 0));
+	filter: blur(10px);
+}
+
+.vt-ab-scene-back{
+	z-index: 1;
+	filter: drop-shadow(0 18px 24px rgba(21, 22, 27, 0.08));
+	animation: vt-ab-drift 7s ease-in-out infinite;
+}
+
+.vt-ab-scene-left{
+	top: 8%;
+	left: -2%;
+	width: 44%;
+}
+
+/* Different timing on the right so the two screens never move in sync */
+.vt-ab-scene-right{
+	top: 0;
+	right: 0;
+	width: 50%;
+	animation-duration: 8.5s;
+	animation-delay: -3s;
+}
+
+.vt-ab-scene-front{
+	z-index: 2;
+	left: 50%;
+	bottom: 0;
+	width: 80%;
+	translate: -50% 0;
+	animation: vt-float 6s ease-in-out infinite;
+}
+
+@keyframes vt-ab-drift{
+	0%, 100%{ transform: translateY(0) rotate(0deg); }
+	50%{ transform: translateY(-16px) rotate(-1.5deg); }
+}
+
+/************************************/
+/***          03. Origin          ***/
+/************************************/
+
+.vt-ab-origin{
+	padding: 120px 0;
+}
+
+.vt-ab-origin-lead{
+	margin-bottom: 0;
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 1.15em;
+	letter-spacing: -0.03em;
+	color: var(--primary-color);
+}
+
+.vt-ab-origin-lead span{
+	color: var(--accent-color);
+}
+
+.vt-ab-origin-copy p:last-child{
+	margin-bottom: 0;
+}
+
+/************************************/
+/***          04. Vision          ***/
+/************************************/
+
+/* Dark surface and on-dark accents come from .vt-ai */
+.vt-ab-vision{
+	text-align: center;
+}
+
+.vt-ab-vision .section-title{
+	max-width: 980px;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+
+.vt-ab-vision .section-title h2{
+	font-size: 56px;
+}
+
+.vt-ab-vision p{
+	max-width: 720px;
+	margin: 0 auto;
+	font-size: 20px;
+	line-height: 1.6em;
+}
+
+/************************************/
+/***          05. Story           ***/
+/************************************/
+
+.vt-ab-story{
+	padding: 120px 0;
+}
+
+.vt-ab-story-photo{
+	aspect-ratio: 3 / 4;
+}
+
+.vt-ab-story .section-title{
+	margin-bottom: 30px;
+}
+
+.vt-ab-story .section-title h2{
+	font-size: 56px;
+}
+
+.vt-ab-question{
+	margin: 0 0 30px;
+	padding: 6px 0 6px 26px;
+	border-left: 3px solid var(--accent-color);
+}
+
+.vt-ab-question p{
+	margin: 0;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1.35em;
+	letter-spacing: -0.02em;
+	color: var(--primary-color);
+}
+
+.vt-ab-story-end{
+	margin: 26px 0 0;
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--accent-color);
+}
+
+/************************************/
+/***        06. Philosophy        ***/
+/************************************/
+
+.vt-ab-philosophy{
+	padding: 120px 0;
+	background: var(--secondary-color);
+}
+
+.vt-ab-philosophy .section-title h2{
+	font-size: 56px;
+}
+
+.vt-ab-intro{
+	margin: 0;
+	font-size: 18px;
+}
+
+.vt-ab-principles{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+}
+
+.vt-ab-principle{
+	padding: 40px;
+	border-radius: 30px;
+	background: var(--white-color);
+	border: 1px solid transparent;
+	transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.vt-ab-principle:hover{
+	border-color: rgba(0, 98, 221, 0.25);
+	box-shadow: 0 24px 50px -30px rgba(0, 98, 221, 0.35);
+}
+
+.vt-ab-principle-num{
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	margin-bottom: 26px;
+	border-radius: 50%;
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+	transition: background-color 0.4s, color 0.4s;
+}
+
+.vt-ab-principle:hover .vt-ab-principle-num{
+	color: var(--white-color);
+	background: var(--accent-color);
+}
+
+.vt-ab-principle h3{
+	font-size: 26px;
+	letter-spacing: -0.02em;
+	margin-bottom: 14px;
+}
+
+.vt-ab-principle p{
+	margin-bottom: 10px;
+}
+
+.vt-ab-principle p:last-child{
+	margin-bottom: 0;
+}
+
+/************************************/
+/***        07. Difference        ***/
+/************************************/
+
+/* Follows "How we work" on the same white background, which already leaves the gap above */
+.vt-sv-diff.vt-ab-diff{
+	padding: 0 0 120px;
+}
+
+/************************************/
+/***           08. Team           ***/
+/************************************/
+
+.vt-ab-team{
+	padding: 120px 0;
+	background: var(--secondary-color);
+}
+
+.vt-ab-team .section-title{
+	margin-bottom: 24px;
+}
+
+.vt-ab-team .section-title h2{
+	font-size: 56px;
+}
+
+.vt-ab-team-copy p:last-child{
+	margin-bottom: 0;
+}
+
+.vt-ab-team-photo{
+	aspect-ratio: 4 / 3;
+}
+
+/* Team gallery: Swiper fills the photo frame; the dots float over the bottom edge */
+.vt-ab-gallery{
+	position: relative;
+}
+
+.vt-ab-gallery .swiper,
+.vt-ab-gallery .swiper-slide{
+	height: 100%;
+	margin: 0;
+}
+
+.vt-ab-gallery .vt-ab-gallery-dots{
+	position: absolute;
+	left: 50%;
+	bottom: 18px;
+	z-index: 2;
+	width: auto;
+	display: flex;
+	gap: 8px;
+	padding: 8px 12px;
+	border-radius: 100px;
+	background: rgba(21, 22, 27, 0.35);
+	backdrop-filter: blur(6px);
+	transform: translateX(-50%);
+}
+
+.vt-ab-gallery-dots .swiper-pagination-bullet{
+	width: 8px;
+	height: 8px;
+	margin: 0 !important;
+	background: var(--white-color);
+	opacity: 0.5;
+	transition: width 0.3s, opacity 0.3s;
+}
+
+.vt-ab-gallery-dots .swiper-pagination-bullet-active{
+	width: 22px;
+	border-radius: 4px;
+	opacity: 1;
+}
+
+.vt-ab-close{
+	margin-top: 90px;
+	padding-top: 60px;
+	border-top: 1px solid var(--divider-color);
+	text-align: center;
+}
+
+.vt-ab-close p{
+	margin: 0;
+	font-size: 26px;
+	line-height: 1.3;
+}
+
+.vt-ab-close strong{
+	display: inline-block;
+	margin-top: 8px;
+	font-size: 40px;
+	letter-spacing: -0.03em;
+	color: var(--primary-color);
+}
+
+/************************************/
+/***        09. Responsive        ***/
+/************************************/
+
+@media only screen and (max-width: 1199px){
+	.vt-ab-origin-lead{
+		font-size: 38px;
+	}
+}
+
+@media only screen and (max-width: 991px){
+	.vt-ab-hero .section-title h1.vt-hero-title{
+		font-size: 48px;
+	}
+
+	.vt-ab-scene{
+		max-width: 480px;
+		margin: 50px auto 0;
+	}
+
+	.vt-ab-origin,
+	.vt-ab-story,
+	.vt-ab-philosophy,
+	.vt-ab-team{
+		padding: 60px 0;
+	}
+
+	.vt-sv-diff.vt-ab-diff{
+		padding: 0 0 60px;
+	}
+
+	.vt-ab-origin-copy{
+		margin: 30px 0 0 24px;
+	}
+
+	.vt-ab-vision .section-title h2,
+	.vt-ab-story .section-title h2,
+	.vt-ab-philosophy .section-title h2,
+	.vt-ab-team .section-title h2{
+		font-size: 42px;
+	}
+
+	.vt-ab-story-photo{
+		max-width: 420px;
+		margin: 0 auto 40px;
+	}
+
+	.vt-ab-intro{
+		margin-top: 20px;
+	}
+
+	.vt-ab-principle{
+		padding: 30px;
+	}
+
+	.vt-ab-team-photo{
+		margin-top: 40px;
+	}
+
+	.vt-ab-close{
+		margin-top: 50px;
+		padding-top: 40px;
+	}
+
+	.vt-ab-close p{
+		font-size: 20px;
+	}
+
+	.vt-ab-close strong{
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-width: 767px){
+	.vt-ab-hero .section-title h1.vt-hero-title{
+		font-size: 38px;
+	}
+
+	/* Unlike the home hero, keep the description: it says what this page is about */
+	.vt-ab-hero .hero-body{
+		display: block;
+		width: auto;
+		margin-left: 14px;
+	}
+
+	.vt-ab-hero .hero-body p{
+		font-size: 17px;
+	}
+
+	.vt-ab-scene{
+		margin-top: 30px;
+	}
+
+	.vt-ab-origin-lead,
+	.vt-ab-team-copy{
+		margin-left: 14px;
+	}
+
+	.vt-ab-origin-copy{
+		margin-left: 14px;
+	}
+
+	.vt-ab-origin-lead{
+		font-size: 30px;
+	}
+
+	.vt-ab-vision .section-title h2,
+	.vt-ab-story .section-title h2,
+	.vt-ab-philosophy .section-title h2,
+	.vt-ab-team .section-title h2{
+		font-size: 34px;
+	}
+
+	.vt-ab-vision p{
+		font-size: 17px;
+	}
+
+	.vt-ab-question p{
+		font-size: 20px;
+	}
+
+	/* Section titles are centered at this size (template); keep their intro copy with them */
+	.vt-ab-intro,
+	.vt-ab-diff .section-row p{
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	.vt-ab-principles{
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.vt-ab-principle{
+		padding: 28px 24px;
+		border-radius: 24px;
+	}
+
+	.vt-ab-principle h3{
+		font-size: 23px;
+	}
+
+	.vt-ab-photo{
+		border-radius: 24px;
+	}
+
+	.vt-ab-close p{
+		font-size: 18px;
+	}
+
+	.vt-ab-close strong{
+		font-size: 26px;
+	}
+}
+
+/************************************/
+/***      10. Reduced motion      ***/
+/************************************/
+
+@media (prefers-reduced-motion: reduce){
+	.vt-ab-scene-back,
+	.vt-ab-scene-front{
+		animation: none;
+	}
+}

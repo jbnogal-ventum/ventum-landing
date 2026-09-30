@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="zxx">
+
+<html lang="en">
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
+	<meta name="description" content="Ventum was founded to create high-quality digital products through transparent processes and close collaboration with every client.">
+	<meta name="keywords" content="about Ventum, software company, product strategy, software development, transparent process, client ownership">
+	<meta name="author" content="Ventum Software">
 	<!-- Page Title -->
-	<title>Weebix - IT Service And Technology HTML Template</title>
+	<title>About Us | Ventum Software</title>
 	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link rel="icon" type="image/png" href="images/ventum-favicon.png">
+	<script>document.documentElement.classList.add('vt-js');</script>
 	<!-- Google Fonts Css-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 	<!-- Bootstrap Css -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- SlickNav Css -->
@@ -30,17 +32,14 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 	<!-- Main Custom Css -->
 	<link href="css/custom.css" rel="stylesheet" media="screen">
+	<!-- Ventum Css -->
+	<link href="css/ventum.css" rel="stylesheet" media="screen">
+	<!-- Ventum Services Css (current menu link + comparison table) -->
+	<link href="css/ventum-services.css" rel="stylesheet" media="screen">
+	<!-- Ventum About Css -->
+	<link href="css/ventum-about.css" rel="stylesheet" media="screen">
 </head>
-<body class="tt-magic-cursor">
-
-    <!-- Preloader Start -->
-	<div class="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
+<body class="tt-magic-cursor vt-home vt-about-page">
 
 	<!-- Magic Cursor Start -->
 	<div id="magic-cursor">
@@ -54,8 +53,8 @@
 			<nav class="navbar navbar-expand-lg">
 				<div class="container">
 					<!-- Logo Start -->
-					<a class="navbar-brand" href="./">
-						<img src="images/logo.svg" alt="Logo">
+					<a class="navbar-brand vt-brand" href="./" aria-label="Ventum Software home">
+						<img class="vt-brand-logo" src="images/ventum-logo-crop.png" alt="Ventum">
 					</a>
 					<!-- Logo End -->
 
@@ -63,34 +62,29 @@
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item submenu"><a class="nav-link" href="./">home</a>
-                                    <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="index.html">Hero Layout 1</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-2.html">Hero Layout 2</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-3.html">Hero Layout 3</a></li>
-                                    </ul>
-                                </li>                                
-                                <li class="nav-item"><a class="nav-link" href="about.html">about us</a></li>
                                 <li class="nav-item"><a class="nav-link" href="services.html">services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="portfolio.html">portfolio</a></li>
-                                <li class="nav-item"><a class="nav-link" href="blog.html">blog</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="#">pages</a>
-                                    <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="service-single.html">service details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="portfolio-single.html">portfolio details </a></li>
-                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">blog details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQ</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
+                                <!-- TODO(links): replace the "#" placeholders below with the real destinations. -->
+                                <li class="nav-item submenu"><a class="nav-link" href="./#clients">work</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="./#education">education</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">industry</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="contact-us.html">free consultation</a></li>                               
+                                <li class="nav-item submenu"><a class="nav-link" href="#" role="button">products</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link vt-ext" href="http://gosharp.io/" target="_blank" rel="noopener">GoSharp <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden">(opens in a new tab)</span></a></li>
+                                        <li class="nav-item"><a class="nav-link vt-ext" href="https://physics.ventum.dev/" target="_blank" rel="noopener">Physics Simulator <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="visually-hidden">(opens in a new tab)</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link is-current" href="about.html" aria-current="page">about us</a></li>
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="#contact">let&rsquo;s talk</a></li>
                             </ul>
                         </div>
-                        <!-- Let’s Start Button Start -->
+                        <!-- Start Project Button Start -->
                         <div class="header-btn d-inline-flex">
-                            <a href="contact-us.html" class="btn-default">free consultation</a>
+                            <a href="#contact" class="btn-default">let&rsquo;s talk</a>
                         </div>
-                        <!-- Let’s Start Button End -->
+                        <!-- Start Project Button End -->
 					</div>
 					<!-- Main Menu End -->
 
@@ -102,728 +96,384 @@
 	</header>
 	<!-- Header End -->
 
-    <!-- Page Header Start -->
-	<div class="page-header">
+    <!-- Hero Section Start -->
+	<div class="hero vt-hero vt-ab-hero">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Page Header Box Start -->
-					<div class="page-header-box">
-						<h1 class="text-anime-style-3">About Us</h1>
-						<nav class="wow fadeInUp" data-wow-delay="0.25s">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="#">home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">about us</li>
-							</ol>
-						</nav>
-					</div>
-					<!-- Page Header Box End -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Page Header End -->
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Hero Content Start -->
+                    <div class="hero-content">
+                        <div class="section-title">
+                            <h1 class="vt-hero-title">We&rsquo;re building the kind of company <span>we&rsquo;d want to work with.</span></h1>
+                        </div>
 
-    <!-- Page About Section Start -->
-    <div class="page-about">
+                        <div class="hero-body">
+                            <p class="vt-hero-reveal">Ventum was founded on a simple idea: to create high-quality digital products through transparent processes and close collaboration with every client.</p>
+                        </div>
+
+                        <div class="hero-footer vt-hero-reveal">
+                            <a href="#contact" class="btn-default">let&rsquo;s work together</a>
+                        </div>
+                    </div>
+                    <!-- Hero Content End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Hero scene: the team in front, two screens floating behind it -->
+                    <div class="vt-ab-scene vt-hero-reveal" aria-hidden="true">
+                        <span class="vt-ab-scene-glow"></span>
+                        <img class="vt-ab-scene-back vt-ab-scene-left" src="images/about/aboutbg-3.webp" width="640" height="640" alt="">
+                        <img class="vt-ab-scene-back vt-ab-scene-right" src="images/about/aboutbg-2.webp" width="640" height="640" alt="">
+                        <img class="vt-ab-scene-front" src="images/about/aboutbg-1.webp" width="1000" height="1000" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <!-- Hero Section End -->
+
+    <!-- Origin Section Start -->
+    <div class="vt-ab-origin" id="origin">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-7">
+                    <p class="vt-ab-origin-lead text-anime-style-3">After years of working across different industries, we realized that technology itself was <span>rarely the problem.</span></p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="vt-ab-origin-copy">
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">The real challenges were poor planning, unclear processes, lack of communication, and products designed to create dependency instead of independence.</p>
+                        <p class="vt-lead wow fadeInUp" data-wow-delay="0.35s"><strong>So we decided to do things differently.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Origin Section End -->
+
+    <!-- Vision Section Start -->
+    <div class="vt-ai vt-ab-vision" id="vision">
+        <div class="container">
+            <div class="section-title">
+                <h3 class="wow fadeInUp">our vision</h3>
+                <h2 class="text-anime-style-3">Great technology should become your competitive advantage. <span>Not another dependency.</span></h2>
+            </div>
+            <p class="wow fadeInUp" data-wow-delay="0.2s">We believe the best technology is the kind you can truly own. Technology that simplifies complexity, supports growth, and gives organizations the independence to shape their own future.</p>
+        </div>
+    </div>
+    <!-- Vision Section End -->
+
+    <!-- Story Section Start -->
+    <div class="vt-ab-story" id="story">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <!-- TODO(media): replace this placeholder with the animated story image (keep the classes) -->
+                    <figure class="vt-ab-photo vt-ab-story-photo vt-ab-placeholder wow fadeInUp" aria-hidden="true">
+                        <span class="vt-ab-placeholder-label"><i class="fa-regular fa-image"></i>animated image</span>
+                    </figure>
+                </div>
+
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="vt-ab-story-copy">
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">our story</h3>
+                            <h2 class="text-anime-style-3">It all started with <span>one question.</span></h2>
+                        </div>
+
+                        <blockquote class="vt-ab-question wow fadeInUp" data-wow-delay="0.2s">
+                            <p>Why do so many companies end up disappointed with their software projects?</p>
+                        </blockquote>
+
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">Throughout our careers, we watched organizations invest significant time, money, and energy in projects that never seemed to end, platforms that were difficult to maintain, and solutions that left clients completely dependent on their providers.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.3s">We knew there had to be a better way.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.35s">One built around clear goals, continuous delivery, transparent decisions, and products designed to evolve.</p>
+                        <p class="vt-ab-story-end wow fadeInUp" data-wow-delay="0.4s">That&rsquo;s why we created Ventum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Story Section End -->
+
+    <!-- Philosophy Section Start -->
+    <div class="vt-ab-philosophy" id="philosophy">
+        <div class="container">
+            <div class="row section-row align-items-end">
+                <div class="col-lg-7">
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">our philosophy</h3>
+                        <h2 class="text-anime-style-3">We&rsquo;re not here to sell hours. <span>We&rsquo;re here to build value.</span></h2>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <p class="vt-ab-intro wow fadeInUp" data-wow-delay="0.25s">Our approach is guided by four principles that shape every project, every decision, and every relationship.</p>
+                </div>
+            </div>
+
+            <div class="vt-ab-principles">
+                <article class="vt-ab-principle wow fadeInUp">
+                    <span class="vt-ab-principle-num">01</span>
+                    <h3>Understand before building</h3>
+                    <p>Every project starts with understanding the business, its processes, and the people who will use the product.</p>
+                    <p>We ask questions, challenge assumptions, and define the right solution before writing code.</p>
+                </article>
+
+                <article class="vt-ab-principle wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="vt-ab-principle-num">02</span>
+                    <h3>Build together</h3>
+                    <p>We don&rsquo;t work behind closed doors.</p>
+                    <p>Our clients are part of the process, with full visibility into roadmaps, priorities, progress, and key decisions.</p>
+                </article>
+
+                <article class="vt-ab-principle wow fadeInUp">
+                    <span class="vt-ab-principle-num">03</span>
+                    <h3>Think long-term</h3>
+                    <p>We build for today without compromising tomorrow.</p>
+                    <p>We prioritize straightforward architectures, open technologies, and scalable solutions designed to remain maintainable as businesses evolve.</p>
+                </article>
+
+                <article class="vt-ab-principle wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="vt-ab-principle-num">04</span>
+                    <h3>Share knowledge, create independence</h3>
+                    <p>We believe ownership goes beyond having access to the source code.</p>
+                    <p>Our goal is to empower every client with the knowledge, tools, and confidence to manage and evolve their own technology.</p>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!-- Philosophy Section End -->
+
+    <!-- How We Work Section Start -->
+    <!-- Same step timeline as the home page; ventum.js drives the progress line -->
+    <div class="vt-method" id="how-we-work">
+        <div class="container">
+            <div class="row section-row align-items-end">
+                <div class="col-lg-7">
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">how we work</h3>
+                        <h2 class="text-anime-style-3">A clear process. <span>From idea to independence.</span></h2>
+                    </div>
+                </div>
+            </div>
+
+            <ol class="vt-steps">
+                <li class="vt-steps-track" aria-hidden="true"><span class="vt-steps-fill"></span></li>
+                <li class="vt-step">
+                    <span class="vt-step-dot">01</span>
+                    <h3>Understand</h3>
+                    <p>We explore your business, identify challenges, and define what success looks like.</p>
+                </li>
+                <li class="vt-step">
+                    <span class="vt-step-dot">02</span>
+                    <h3>Design</h3>
+                    <p>We translate ideas into clear product strategies, intuitive experiences, and solid technical foundations.</p>
+                </li>
+                <li class="vt-step">
+                    <span class="vt-step-dot">03</span>
+                    <h3>Build</h3>
+                    <p>We develop your product iteratively, with transparent priorities and frequent deliveries.</p>
+                </li>
+                <li class="vt-step">
+                    <span class="vt-step-dot">04</span>
+                    <h3>Validate</h3>
+                    <p>We continuously test, gather feedback, and improve to make sure we&rsquo;re building the right solution.</p>
+                </li>
+                <li class="vt-step">
+                    <span class="vt-step-dot">05</span>
+                    <h3>Empower</h3>
+                    <p>We share knowledge, documentation, and control so your team can confidently take ownership of the product.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- How We Work Section End -->
+
+    <!-- Difference Section Start 
+    <div class="vt-sv-diff vt-ab-diff" id="difference">
+        <div class="container">
+            <div class="row section-row align-items-end">
+                <div class="col-lg-8">
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">the ventum difference</h3>
+                        <h2 class="text-anime-style-3">A different approach to <span>building software.</span></h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <p class="wow fadeInUp" data-wow-delay="0.25s">We believe a successful technology partnership should make your business stronger, not more dependent.</p>
+                </div>
+            </div>
+
+            <table class="vt-compare wow fadeInUp" data-wow-delay="0.2s">
+                <thead>
+                    <tr><th scope="col">The traditional approach</th><th scope="col">The Ventum approach</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><i class="fa-solid fa-xmark"></i>Executing requirements</td><td><i class="fa-solid fa-check"></i>Understanding the business before proposing solutions</td></tr>
+                    <tr><td><i class="fa-solid fa-xmark"></i>Delivering results at the end</td><td><i class="fa-solid fa-check"></i>Collaborating throughout the entire process</td></tr>
+                    <tr><td><i class="fa-solid fa-xmark"></i>Complex, difficult-to-maintain systems</td><td><i class="fa-solid fa-check"></i>Simple, robust, and scalable products</td></tr>
+                    <tr><td><i class="fa-solid fa-xmark"></i>Creating vendor dependency</td><td><i class="fa-solid fa-check"></i>Building client ownership and independence</td></tr>
+                    <tr><td><i class="fa-solid fa-xmark"></i>Treating AI as an add-on</td><td><i class="fa-solid fa-check"></i>Designing AI-ready architectures from the ground up</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+     Difference Section End -->
+
+    <!-- Team Section Start -->
+    <div class="vt-ab-team" id="team">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <!-- About Us Image Start -->
-                    <div class="page-about-image">
-                        <div class="about-img-1">
-                            <figure class="image-anime reveal">
-                                <img src="images/page-about-1.jpg" alt="">
-                            </figure>
+                    <div class="vt-ab-team-copy">
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">our team</h3>
+                            <h2 class="text-anime-style-3">A small team. Deep expertise. <span>Real involvement.</span></h2>
                         </div>
-                        <div class="about-img-2">
-                            <figure class="image-anime reveal">
-                                <img src="images/page-about-2.jpg" alt="">
-                            </figure>
-                        </div>
-                        <div class="work-experience">
-                            <div class="work-experience-icon">
-                                <img src="images/icon-work-experience.svg" alt="">
-                            </div>
-                            <div class="work-experience-content">
-                                <h3><span class="counter">30</span>+</h3>
-							    <p>Work Experience</p>
-                            </div>
-                        </div>
+                        <p class="vt-lead wow fadeInUp" data-wow-delay="0.2s">We bring together product strategy, design, and software engineering to create end-to-end digital solutions.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.3s">We intentionally work with focused, multidisciplinary teams where every person makes a meaningful contribution.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.4s">Our project leaders stay directly involved throughout the process, because we believe the best decisions happen close to the product and the people behind it.</p>
                     </div>
-                    <!-- About Us Image End -->
                 </div>
 
                 <div class="col-lg-6">
-                    <!-- About Us Content Start -->
-                    <div class="about-content">
+                    <!-- Team gallery: loops automatically (ventum-about.js). To add a photo, copy a slide. -->
+                    <div class="vt-ab-photo vt-ab-team-photo vt-ab-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="swiper" aria-label="Team photos">
+                            <div class="swiper-wrapper">
+                                <figure class="swiper-slide">
+                                    <img src="images/about/about2.webp" width="1319" height="989" alt="The Ventum team working together around a table" loading="lazy">
+                                </figure>
+                                <figure class="swiper-slide">
+                                    <img src="images/about/about3.webp" width="741" height="989" alt="Two members of the Ventum team working in the office" loading="lazy">
+                                </figure>
+                                <figure class="swiper-slide">
+                                    <img src="images/about/about1.webp" width="900" height="1200" alt="Two members of the Ventum team at Expo Industrias y Servicios 2026" loading="lazy">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="vt-ab-gallery-dots"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vt-ab-close wow fadeInUp">
+                <p>No unnecessary layers. No black boxes.</p>
+                <p><strong>Just people working together to build great products.</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- Team Section End -->
+
+    <!-- Contact Section Start -->
+    <div class="contact-us vt-contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-details vt-sticky">
                         <!-- Section Title Start -->
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">about us</h3>
-                            <h2 class="text-anime-style-3">Websites that tell your brand's story</h2>
+                            <h3 class="wow fadeInUp">start a project</h3>
+                            <h2 class="text-anime-style-3">Tell us what you have <span>in mind.</span></h2>
                         </div>
                         <!-- Section Title End -->
-                        <p class="wow fadeInUp" data-wow-delay="0.25s">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium , totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.</p>
-                        <p class="wow fadeInUp" data-wow-delay="0.5s">totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        
-                        <ul class="wow fadeInUp" data-wow-delay="0.75s">
-                            <li>Ease of Scalability</li>
-                            <li>Instant Impact</li>
-                            <li>Expertise and Experience</li>
-                            <li>Time Zone Aligned</li>
-                            <li>Full Flexibility</li>
-                            <li>Proactive Support</li>
-                        </ul>
-                    </div>
-                    <!-- About Us Content End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Page About Section End -->
 
-    <!-- Why Choose Us Section Start -->
-    <div class="why-choose-us">
-        <div class="container">
-            <div class="row section-row align-items-center">
-                <div class="col-lg-8 col-md-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">why choose us</h3>
-                        <h2 class="text-anime-style-3">Why choose us ?</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <!-- Why Choose Item Start -->
-                    <div class="why-choose-us-item wow fadeInUp" data-wow-delay="0.25s">
-                        <div class="icon-box">
-                            <img src="images/icon-whyus-1.svg" alt="">
+                        <div class="contact-detail-body">
+                            <p class="wow fadeInUp" data-wow-delay="0.25s">Share your idea, current challenge, or technology need with us. We'll review the information and get in touch to explore how we can help.</p>
+                            <div class="vt-mail wow fadeInUp" data-wow-delay="0.4s">
+                                <span>Prefer a meeting?</span>
+                                <p class="vt-mail-title">Book a call and tell us about your project.</p>
+                                <a class="btn-default" href="https://calendly.com/mailenkleinman-ventum/30min" target="_blank" rel="noopener">schedule a meeting</a>
+                            </div>
                         </div>
-                        <h3>innovation</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
                     </div>
-                    <!-- Why Choose Item End -->
                 </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <!-- Why Choose Item Start -->
-                    <div class="why-choose-us-item wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="icon-box">
-                            <img src="images/icon-whyus-2.svg" alt="">
-                        </div>
-                        <h3>quality-focused</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                    </div>
-                    <!-- Why Choose Item End -->
-                </div>
-
-                <div class="col-lg-4">
-                    <!-- Why Choose Item Start -->
-                    <div class="why-choose-us-item wow fadeInUp" data-wow-delay="0.75s">
-                        <div class="icon-box">
-                            <img src="images/icon-whyus-3.svg" alt="">
-                        </div>
-                        <h3>value for money</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                    </div>
-                    <!-- Why Choose Item End -->
-                </div>
-
-                <div class="col-md-12">
-                    <!-- Why Us Explore Item Start -->
-                    <div class="why-us-explore-item">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="why-us-section-title">
-                                    <!-- Section Title Start -->
-                                    <div class="section-title">
-                                        <h2 class="text-anime-style-3">Do you want to explore our outstanding work?</h2>
+                <div class="col-lg-7">
+                    <div class="contact-form-box wow fadeInUp" data-wow-delay="0.25s">
+                        <!-- Contact Form Start -->
+                        <div class="contact-form">
+                            <form id="vtContactForm" action="project-inquiry.php" method="POST" novalidate>
+                                <div class="row">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label for="vtName">Name</label>
+                                        <input type="text" name="name" class="form-control" id="vtName" autocomplete="name" required>
+                                        <div class="vt-error" data-for="vtName">Please enter your name.</div>
                                     </div>
-                                    <!-- Section Title End -->
 
-                                    <!-- Explore Item Icon Start -->
-                                    <div class="explore-item-icon">
-                                        <img src="images/icon-whyus-4.svg" alt="">
+                                    <div class="form-group col-md-6 mb-4">
+                                        <label for="vtEmail">Email</label>
+                                        <input type="email" name="email" class="form-control" id="vtEmail" autocomplete="email" required>
+                                        <div class="vt-error" data-for="vtEmail">Please enter a valid email address.</div>
                                     </div>
-                                    <!-- Explore Item Icon End -->
+
+                                    <div class="form-group col-md-12 mb-4">
+                                        <label for="vtCompany">Company or organization <small>(optional)</small></label>
+                                        <input type="text" name="company" class="form-control" id="vtCompany" autocomplete="organization">
+                                    </div>
+
+                                    <fieldset class="form-group col-md-12 mb-4">
+                                        <legend>What kind of support are you looking for?</legend>
+                                        <div class="vt-options">
+                                            <label><input type="radio" name="support" value="New product development" required><span>New product development</span></label>
+                                            <label><input type="radio" name="support" value="AI integration"><span>AI integration</span></label>
+                                            <label><input type="radio" name="support" value="Improving an existing product"><span>Improving an existing product</span></label>
+                                            <label><input type="radio" name="support" value="Process automation"><span>Process automation</span></label>
+                                            <label><input type="radio" name="support" value="Technical audit"><span>Technical audit</span></label>
+                                            <label><input type="radio" name="support" value="Product or development team"><span>Product or development team</span></label>
+                                            <label><input type="radio" name="support" value="I'm not sure yet"><span>I'm not sure yet</span></label>
+                                        </div>
+                                        <div class="vt-error" data-for="support">Please choose the option that fits best.</div>
+                                    </fieldset>
+
+                                    <div class="form-group col-md-12 mb-4">
+                                        <label for="vtMessage">Tell us about your project</label>
+                                        <textarea name="message" class="form-control" id="vtMessage" rows="6" required></textarea>
+                                        <div class="vt-error" data-for="vtMessage">Please tell us a little about your project.</div>
+                                    </div>
+
+                                    <!-- Honeypot -->
+                                    <div class="vt-hp" aria-hidden="true">
+                                        <label for="vtWebsite">Website</label>
+                                        <input type="text" name="website" id="vtWebsite" tabindex="-1" autocomplete="off">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn-default">start the conversation</button>
+                                        <div id="vtFormStatus" class="vt-form-status" role="status" aria-live="polite"></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                        
-
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <!-- Explore Item Content Start -->
-                                <div class="explore-item-content wow fadeInUp" data-wow-delay="0.25s">
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium , totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.</p>
-                                </div>
-                                <!-- Explore Item Content End -->
-                            </div>
-
-                            <div class="col-lg-6">
-                                <!-- Explore Item Content Start -->
-                                <div class="explore-item-tags wow fadeInUp" data-wow-delay="0.25s">
-                                    <ul>
-                                        <li><a href="#" class="btn-default">dribbble</a></li>
-                                        <li><a href="#" class="btn-default">linkedin</a></li>
-                                        <li><a href="#" class="btn-default">contact Us</a></li>
-                                    </ul>
-                                </div>
-                                <!-- Explore Item Content End -->
-                            </div>
-                        </div>                        
+                            </form>
+                        </div>
+                        <!-- Contact Form End -->
                     </div>
-                    <!-- Why Us Explore Item End -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- Why Choose us Section End -->
-
-    <!-- Exclusive Partners Section Start -->
-    <div class="exclusive-partners">
-        <div class="container">
-            <div class="row section-row align-items-center">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">executive partners</h3>
-                        <h2 class="text-anime-style-3">100+ Partners & supporters</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="images/icon-partners-1.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="0.4s">
-                        <img src="images/icon-partners-2.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="images/icon-partners-3.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="0.8s">
-                        <img src="images/icon-partners-4.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="1s">
-                        <img src="images/icon-partners-3.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="1.2s">
-                        <img src="images/icon-partners-4.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="1.4s">
-                        <img src="images/icon-partners-1.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-
-                <div class="col-lg-3 col-6">
-                    <!-- Partners Logo Start -->
-                    <div class="partners-logo wow fadeInUp" data-wow-delay="1.6s">
-                        <img src="images/icon-partners-2.svg" alt="">
-                    </div>
-                    <!-- Partners Logo End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Exclusive Partners Section End -->
-
-    <!-- Overview Comapny Section Start -->
-    <div class="overview-company">
-        <div class="container">
-            <div class="row section-row align-items-center">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">ourview comapny</h3>
-                        <h2 class="text-anime-style-3">Stats that matter</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <!-- Counter Box Start -->
-                    <div class="counter-box">
-                        <h3><em>#</em><span>1</span> IT Services</h3>
-						<p>Company In UK</p>
-                    </div>
-                    <!-- Counter Box End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Counter Box Start -->
-                    <div class="counter-box">
-                        <h3><span class="counter">300</span><em>+</em></h3>
-						<p>Global Clients</p>
-                    </div>
-                    <!-- Counter Box End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Counter Box Start -->
-                    <div class="counter-box">
-                        <h3><span class="counter">21</span><em>+</em> years</h3>
-						<p>In Development</p>
-                    </div>
-                    <!-- Counter Box End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Counter Box Start -->
-                    <div class="counter-box">
-                        <h3><em>$</em><span class="counter">50</span><em>+</em> Million</h3>
-						<p>Total Revenue</p>
-                    </div>
-                    <!-- Counter Box End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Overview Comapny Section End -->
-
-    <!-- Our Team Section Start -->
-    <div class="our-team">
-        <div class="container">
-            <div class="row section-row align-items-center">
-                <div class="col-lg-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">our team</h3>
-                        <h2 class="text-anime-style-3">Meet the expert</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.25s">
-                        <!-- Team Img Start -->
-                        <div class="team-image">
-                            <figure>
-                                <img src="images/team-1.jpg" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img End -->
-
-                        <!-- Team Body Start -->
-                        <div class="team-body">
-                            <div class="team-content">
-                                <h3>Arita Banson</h3>
-                                <p>Founder & CEO</p>
-                            </div>
-                            <div class="team-icon"> 
-                                <a href="#"><img src="images/icon-share.svg" alt=""></a>
-                            </div>
-                        </div>
-                        <!-- Team Body End -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.5s">
-                        <!-- Team Img Start -->
-                        <div class="team-image">
-                            <figure>
-                                <img src="images/team-2.jpg" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img End -->
-
-                        <!-- Team Body Start -->
-                        <div class="team-body">
-                            <div class="team-content">
-                                <h3>John Doe</h3>
-                                <p>Sr. Development</p>
-                            </div>
-                            <div class="team-icon"> 
-                                <a href="#"><img src="images/icon-share.svg" alt=""></a>
-                            </div>
-                        </div>
-                        <!-- Team Body End -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.75s">
-                        <!-- Team Img Start -->
-                        <div class="team-image">
-                            <figure>
-                                <img src="images/team-3.jpg" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img End -->
-
-                        <!-- Team Body Start -->
-                        <div class="team-body">
-                            <div class="team-content">
-                                <h3>Arita Doe</h3>
-                                <p>Sr. Designer</p>
-                            </div>
-                            <div class="team-icon"> 
-                                <a href="#"><img src="images/icon-share.svg" alt=""></a>
-                            </div>
-                        </div>
-                        <!-- Team Body End -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Team Member Item Start -->
-                    <div class="team-member-item wow fadeInUp" data-wow-delay="1s">
-                        <!-- Team Img Start -->
-                        <div class="team-image">
-                            <figure>
-                                <img src="images/team-4.jpg" alt="">
-                            </figure>
-
-                            <div class="our-team-social-icon">
-                                <ul>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team Img End -->
-
-                        <!-- Team Body Start -->
-                        <div class="team-body">
-                            <div class="team-content">
-                                <h3>Banson Doe</h3>
-                                <p>Sr. Manager</p>
-                            </div>
-                            <div class="team-icon"> 
-                                <a href="#"><img src="images/icon-share.svg" alt=""></a>
-                            </div>
-                        </div>
-                        <!-- Team Body End -->
-                    </div>
-                    <!-- Team Member Item End -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Our Team Section End -->
-
-    <!-- Scrolling Ticker Section Start -->
-    <div class="scrolling-ticker">
-        <div class="scrolling-ticker-box">
-            <div class="scrolling-content">
-                <span><i class="fa-solid fa-circle"></i>Web Development</span>
-                <span><i class="fa-solid fa-circle"></i>Game Development</span>
-                <span><i class="fa-solid fa-circle"></i>App Development</span>
-                <span><i class="fa-solid fa-circle"></i>Digital Marketing</span>
-                <span><i class="fa-solid fa-circle"></i>SEO Optimization</span>
-                <span><i class="fa-solid fa-circle"></i>Graphics Design</span>
-                <span><i class="fa-solid fa-circle"></i>Networking Services</span>
-            </div>
-
-            <div class="scrolling-content">
-                <span><i class="fa-solid fa-circle"></i>Web Development</span>
-                <span><i class="fa-solid fa-circle"></i>Game Development</span>
-                <span><i class="fa-solid fa-circle"></i>App Development</span>
-                <span><i class="fa-solid fa-circle"></i>Digital Marketing</span>
-                <span><i class="fa-solid fa-circle"></i>SEO Optimization</span>
-                <span><i class="fa-solid fa-circle"></i>Graphics Design</span>
-                <span><i class="fa-solid fa-circle"></i>Networking Services</span>
-            </div>
-        </div>
-    </div>
-    <!-- Scrolling Ticker Section End -->
-
-    <!-- clients testimonials Section Start -->
-	<div class="clients-testimonials about-testimonials">
-        <div class="container">
-            <div class="row section-row align-items-center">
-                <div class="col-lg-8 col-md-12">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">client testimonials</h3>
-                        <h2 class="text-anime-style-3">Our customers love us.</h2>
-                    </div>
-                    <!-- Section Title End -->
-                </div>
-            </div>
-
-            <div class="row">
-				<div class="col-md-12">
-					<!-- Testimonial Slider Start -->
-					<div class="testimonial-slider">
-						<div class="swiper">
-							<div class="swiper-wrapper">
-								<!-- Testimonial Slide Start -->
-								<div class="swiper-slide">
-									<div class="testimonial-item">
-										<div class="testimonial-rating">
-                                            <img src="images/icon-star.svg" alt="">
-                                        </div>										
-
-                                        <div class="testimonial-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                        </div>											
-
-                                        <div class="testimonial-body">
-                                            <figure class="image-anime">
-                                                <img src="images/author-1.jpg" alt="">
-                                            </figure>
-                                            <div class="testimonial-author-title">
-                                                <h2>John Doe</h2>
-                                                <p>Acme Solutions</p>
-                                            </div>										
-                                        </div>													
-									</div>
-								</div>
-								<!-- Testimonial Slide End -->
-                                
-                                <!-- Testimonial Slide Start -->
-								<div class="swiper-slide">
-									<div class="testimonial-item">
-										<div class="testimonial-rating">
-                                            <img src="images/icon-star.svg" alt="">
-                                        </div>										
-
-                                        <div class="testimonial-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                        </div>											
-
-                                        <div class="testimonial-body">
-                                            <figure class="image-anime">
-                                                <img src="images/author-2.jpg" alt="">
-                                            </figure>
-                                            <div class="testimonial-author-title">
-                                                <h2>Arita Banson</h2>
-                                                <p>Delta Innovation</p>
-                                            </div>										
-                                        </div>													
-									</div>
-								</div>
-								<!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-								<div class="swiper-slide">
-									<div class="testimonial-item">
-										<div class="testimonial-rating">
-                                            <img src="images/icon-star.svg" alt="">
-                                        </div>										
-
-                                        <div class="testimonial-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                        </div>											
-
-                                        <div class="testimonial-body">
-                                            <figure class="image-anime">
-                                                <img src="images/author-3.jpg" alt="">
-                                            </figure>
-                                            <div class="testimonial-author-title">
-                                                <h2>Banson Doe</h2>
-                                                <p>Horizon Ventures</p>
-                                            </div>										
-                                        </div>													
-									</div>
-								</div>
-								<!-- Testimonial Slide End -->
-
-                                <!-- Testimonial Slide Start -->
-								<div class="swiper-slide">
-									<div class="testimonial-item">
-										<div class="testimonial-rating">
-                                            <img src="images/icon-star.svg" alt="">
-                                        </div>										
-
-                                        <div class="testimonial-content">
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                        </div>											
-
-                                        <div class="testimonial-body">
-                                            <figure class="image-anime">
-                                                <img src="images/author-2.jpg" alt="">
-                                            </figure>
-                                            <div class="testimonial-author-title">
-                                                <h2>John Doe</h2>
-                                                <p>Omega Solutions</p>
-                                            </div>										
-                                        </div>													
-									</div>
-								</div>
-								<!-- Testimonial Slide End -->             
-							</div>
-							<div class="swiper-pagination"></div>
-						</div>
-					</div>
-					<!-- Testimonial Slider End -->
-				</div>
-			</div>
-        </div>
-    </div>
-    <!-- clients testimonials Section End -->
+    <!-- Contact Section End -->
 
     <!-- Footer Start -->
-	<footer class="main-footer">
+	<footer class="main-footer" style="padding-top: 2em !important;">
         <div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<!-- Mega Footer Start -->
-					<div class="mega-footer">
-						<div class="row">
-							<div class="col-lg-6 col-md-12">
-								<!-- Footer About Start -->
-								<div class="footer-about">
-									<figure>
-										<img src="images/footer-logo.svg" alt="">
-									</figure>
-									<p>Creative Agency Based on Lorem Ipsum</p>
-                                    <ul>
-                                        <li><a href="#">info@domainname.com</a></li>
-                                        <li><a href="#">(+0) 123 456 789</a></li>
-                                    </ul>
-								</div>
-								<!-- Footer About End -->
-							</div>
-
-							<div class="col-lg-2 col-md-4">
-								<!-- Footer Links Start -->
-								<div class="footer-links">
-									<h2>pages</h2>
-									<ul>
-										<li><a href="#">Home</a></li>
-										<li><a href="#">About Us</a></li>
-										<li><a href="#">Services</a></li>
-										<li><a href="#">Blog</a></li>
-										<li><a href="#">Contact Us</a></li>
-									</ul>
-								</div>
-								<!-- Footer Links End -->
-							</div>
-
-							<div class="col-lg-2 col-md-4">
-								<!-- Footer Links Start -->
-								<div class="footer-links">
-									<h2>Socials</h2>
-									<ul>
-										<li><a href="#">instagram</a></li>
-										<li><a href="#">facebook</a></li>
-										<li><a href="#">twitter</a></li>
-										<li><a href="#">linkedin</a></li>
-									</ul>
-								</div>
-								<!-- Footer Links End -->
-							</div>
-
-							<div class="col-lg-2 col-md-4">
-								<!-- Footer Links Start -->
-								<div class="footer-links">
-									<h2>services</h2>
-									<ul>
-										<li><a href="#">web development</a></li>
-										<li><a href="#">digital marketing</a></li>
-										<li><a href="#">game development</a></li>
-										<li><a href="#">mobile app development</a></li>
-										<li><a href="#">networking services</a></li>
-									</ul>
-								</div>
-								<!-- Footer Links End -->
-							</div>
-						</div>
-					</div>
-					<!-- Mega Footer End -->
+				<div class="col-md-12 mb-4">
 
 					<!-- Copyright Footer Start -->
-					<div class="footer-copyright">
+					<div class="">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <!-- Footer Copyright Content Start -->
 								<div class="footer-copyright-text">
-									<p>Copyright © 2024 weebix. All rights reserved.</p>
+									<p>Copyright &copy; <span class="vt-year">2026</span> Ventum Software. All rights reserved.</p>
 								</div>
-								<!-- Footer Copyright Content End -->
                             </div>
                             <div class="col-lg-6">
-                                <!-- Footer Policy Links Start -->
                                 <div class="footer-policy-links">
                                     <ul>
-                                        <li><a href="#">privacy policy</a></li>
-                                        <li><a href="#">terms of service</a></li>
                                         <li class="highlighted"><a href="#top">go to top</a></li>
                                     </ul>
                                 </div>
-                                <!-- Footer Policy Links End -->
                             </div>
-                        </div>						
+                        </div>
 					</div>
 					<!-- Copyright Footer End -->
 				</div>
@@ -831,6 +481,7 @@
 		</div>
     </footer>
     <!-- Footer End -->
+
 
     <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -861,5 +512,9 @@
     <script src="js/wow.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <!-- Ventum js file -->
+    <script src="js/ventum.js"></script>
+    <!-- Ventum About js file -->
+    <script src="js/ventum-about.js"></script>
 </body>
 </html>

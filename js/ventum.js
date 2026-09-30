@@ -439,4 +439,58 @@
 				.then(function () { button.disabled = false; });
 		});
 	})();
+
+	/* ------------------------------------------------------------------
+	   Calendly: open booking links in Calendly's popup instead of a new tab.
+	   The widget is only loaded on the first click; if it can't load
+	   (offline, blocked), the link opens in a new tab as a fallback.
+	------------------------------------------------------------------ */
+	(function calendly() {
+		var links = $all("a[href^='https://calendly.com/']");
+		if (!links.length) return;
+
+		var WIDGET = "https://assets.calendly.com/assets/external/widget";
+		var loading = null;
+
+		function loadWidget() {
+			if (window.Calendly) return Promise.resolve();
+			if (loading) return loading;
+
+			var css = document.createElement("link");
+			css.rel = "stylesheet";
+			css.href = WIDGET + ".css";
+			document.head.appendChild(css);
+
+			loading = new Promise(function (resolve, reject) {
+				var js = document.createElement("script");
+				js.src = WIDGET + ".js";
+				js.async = true;
+				js.onload = function () { window.Calendly ? resolve() : reject(); };
+				js.onerror = function () { loading = null; reject(); };
+				document.head.appendChild(js);
+			});
+			return loading;
+		}
+
+		links.forEach(function (link) {
+			link.setAttribute("aria-haspopup", "dialog");
+
+			/* Start loading as soon as someone shows intent, so the popup opens faster */
+			link.addEventListener("pointerenter", function () { loadWidget().catch(function () {}); }, { once: true });
+			link.addEventListener("focus", function () { loadWidget().catch(function () {}); }, { once: true });
+
+			link.addEventListener("click", function (e) {
+				if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return; // let "open in new tab" work
+				e.preventDefault();
+				var url = link.href;
+				loadWidget()
+					.then(function () { window.Calendly.initPopupWidget({ url: url }); })
+					.catch(function () {
+						var win = window.open(url, "_blank");
+						if (win) win.opener = null;
+						else window.location.href = url;
+					});
+			});
+		});
+	})();
 })();
