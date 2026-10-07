@@ -190,6 +190,18 @@ html{
 	padding: 5px 0;
 }
 
+/* Current page inside a dropdown: the dropdown is brand blue, so stay white and underline */
+.main-menu ul ul li a.is-current{
+	color: var(--white-color);
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 5px;
+}
+
+.main-menu ul ul li a.is-current:hover{
+	color: var(--primary-color);
+}
+
 /* "Open in a new tab" links */
 .vt-ext{
 	display: flex;

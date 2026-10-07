@@ -1,0 +1,303 @@
+/* ----------------------------------------------------------------------------------------
+* Ventum Software - Industry page layer
+* Loaded after ventum-education.css, whose work-page components (hero areas, experience
+* cards, checklist, perspective) this page shares. Only adds what is specific to industry.
+* ---------------------------------------------------------------------------------------- */
+/* INDEX
+----------------------------------------------------------------------------------------
+01. Hero + operations screens
+02. Challenges
+03. Organizations
+04. Section backgrounds
+05. Final CTA
+06. Responsive
+-------------------------------------------------------------------------------------- */
+
+/************************************/
+/*** 01. Hero + operations screens **/
+/************************************/
+
+.vt-in-hero .section-title h1.vt-hero-title{
+	font-size: 52px;
+}
+
+.vt-in-hero .hero-body p.vt-in-hero-sub{
+	margin-top: 14px;
+	font-size: 16px;
+	color: var(--text-color);
+}
+
+.vt-ed-rows li.is-flag > i{
+	color: #E58A1F;
+}
+
+.vt-ed-rows li.is-flag em{
+	color: #C46F0C;
+}
+
+/* Status pills (assets) and maintenance type pills (work orders) */
+.vt-in-assets li b,
+.vt-in-orders li b{
+	flex: 0 0 auto;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+}
+
+.vt-in-assets li b.is-ok{
+	color: #1E8A4C;
+	background: rgba(31, 178, 107, 0.12);
+}
+
+.vt-in-assets li b.is-warn,
+.vt-in-orders li b.is-corrective{
+	color: #C46F0C;
+	background: rgba(229, 138, 31, 0.14);
+}
+
+/* Field form on a phone-sized card */
+.vt-in-form{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.vt-in-field{
+	display: block;
+	padding: 8px 12px;
+	border-radius: 10px;
+	border: 1px solid var(--divider-color);
+}
+
+.vt-in-field small,
+.vt-in-sign small{
+	display: block;
+	margin-bottom: 6px;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--text-color);
+}
+
+.vt-in-field i{
+	display: block;
+	width: var(--w);
+	height: 7px;
+	border-radius: 4px;
+	background: var(--primary-color);
+	opacity: 0.8;
+}
+
+.vt-in-photo{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border-radius: 10px;
+	background: var(--accent-soft);
+	font-weight: 700;
+	color: var(--accent-color);
+}
+
+.vt-in-sign{
+	display: block;
+	padding: 8px 12px 6px;
+	border-radius: 10px;
+	border: 1px dashed var(--divider-color);
+}
+
+.vt-in-sign svg{
+	display: block;
+	width: 60%;
+	height: 22px;
+	margin-bottom: 4px;
+}
+
+.vt-in-sign path{
+	fill: none;
+	stroke: var(--primary-color);
+	stroke-width: 1.8;
+	stroke-linecap: round;
+	vector-effect: non-scaling-stroke;
+	stroke-dasharray: 260;
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 1.4s var(--ease-out) 0.2s;
+}
+
+/* The signature draws itself each time the form comes on screen */
+.vt-ed-panel:not(.is-active) .vt-in-sign path{
+	stroke-dashoffset: 260;
+	transition: none;
+}
+
+/************************************/
+/***        02. Challenges        ***/
+/************************************/
+
+/* White section (the hero above is grey), so the cards flip to grey */
+.vt-problems.vt-in-challenges{
+	padding: 120px 0;
+	background: var(--white-color);
+}
+
+.vt-in-challenges .vt-problem{
+	background: var(--secondary-color);
+}
+
+/************************************/
+/***       03. Organizations      ***/
+/************************************/
+
+.vt-in-orgs{
+	padding: 120px 0;
+}
+
+.vt-in-logos{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-in-logos li{
+	display: grid;
+	place-items: center;
+	height: 160px;
+	padding: 20px;
+	border-radius: 30px;
+	background: var(--secondary-color);
+	transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.vt-in-logos li:hover{
+	background: var(--white-color);
+	box-shadow: 0 24px 50px -30px rgba(0, 98, 221, 0.35);
+}
+
+/* Name stands in for the logo until the artwork is added */
+.vt-in-logos span{
+	font-size: 30px;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	color: var(--text-color);
+	transition: color 0.4s;
+}
+
+.vt-in-logos li:hover span{
+	color: var(--primary-color);
+}
+
+.vt-in-logos img{
+	max-width: 70%;
+	max-height: 60px;
+	filter: grayscale(1);
+	opacity: 0.7;
+	transition: filter 0.4s, opacity 0.4s;
+}
+
+.vt-in-logos li:hover img{
+	filter: none;
+	opacity: 1;
+}
+
+/************************************/
+/***    04. Section backgrounds   ***/
+/************************************/
+
+/* Keeps grey and white sections alternating down the page */
+.vt-ed-feats-section.vt-in-feats{
+	background: var(--secondary-color);
+}
+
+.vt-in-feats .vt-ed-feats li{
+	background: var(--white-color);
+}
+
+.vt-ed-perspective.vt-in-perspective{
+	background: var(--white-color);
+}
+
+.vt-in-perspective .vt-ed-perspective-close strong{
+	margin-top: 0;
+}
+
+.why-choose-us.vt-in-why{
+	padding: 120px 0;
+}
+
+/************************************/
+/***         05. Final CTA        ***/
+/************************************/
+
+.vt-in-cta .section-title h2{
+	font-size: 44px;
+}
+
+/************************************/
+/***        06. Responsive        ***/
+/************************************/
+
+@media only screen and (max-width: 1199px){
+	.vt-in-hero .section-title h1.vt-hero-title{
+		font-size: 46px;
+	}
+}
+
+@media only screen and (max-width: 991px){
+	.vt-in-hero .section-title h1.vt-hero-title{
+		font-size: 42px;
+	}
+
+	.vt-problems.vt-in-challenges,
+	.vt-in-orgs,
+	.why-choose-us.vt-in-why{
+		padding: 60px 0;
+	}
+
+	.vt-in-logos{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.vt-in-cta .section-title h2{
+		font-size: 36px;
+	}
+}
+
+@media only screen and (max-width: 767px){
+	.vt-in-hero .section-title h1.vt-hero-title{
+		font-size: 34px;
+	}
+
+	.vt-in-hero .hero-body p.vt-in-hero-sub{
+		font-size: 15px;
+	}
+
+	.vt-in-logos{
+		gap: 12px;
+	}
+
+	.vt-in-logos li{
+		height: 110px;
+		border-radius: 22px;
+	}
+
+	.vt-in-logos span{
+		font-size: 22px;
+	}
+
+	.vt-in-cta .section-title h2{
+		font-size: 30px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce){
+	.vt-in-sign path{
+		transition: none;
+	}
+}
