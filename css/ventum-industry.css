@@ -7,10 +7,11 @@
 ----------------------------------------------------------------------------------------
 01. Hero + operations screens
 02. Challenges
-03. Organizations
-04. Section backgrounds
-05. Final CTA
-06. Responsive
+03. Industries
+04. Organizations
+05. Section backgrounds
+06. Final CTA
+07. Responsive
 -------------------------------------------------------------------------------------- */
 
 /************************************/
@@ -149,7 +150,97 @@
 }
 
 /************************************/
-/***       03. Organizations      ***/
+/***        03. Industries        ***/
+/************************************/
+
+/* One short row of sector tiles; the hovered tile turns blue */
+.vt-in-sectors{
+	padding: 120px 0;
+	background: var(--secondary-color);
+}
+
+.vt-in-sector-grid{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vt-in-sector{
+	display: flex;
+	flex-direction: column;
+	min-height: 280px;
+	padding: 30px;
+	border-radius: 28px;
+	background: var(--white-color);
+	transition: background-color 0.4s, transform 0.5s var(--ease-out), box-shadow 0.4s;
+}
+
+.vt-in-sector:hover{
+	background: var(--accent-color);
+	transform: translateY(-6px);
+	box-shadow: 0 24px 50px -30px rgba(0, 98, 221, 0.6);
+}
+
+.vt-in-sector-top{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: auto;
+	padding-bottom: 40px;
+}
+
+.vt-in-sector-top i{
+	display: grid;
+	place-items: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 16px;
+	font-size: 24px;
+	color: var(--accent-color);
+	background: var(--accent-soft);
+	transition: color 0.4s, background-color 0.4s;
+}
+
+.vt-in-sector-top span{
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--text-color);
+	transition: color 0.4s;
+}
+
+.vt-in-sector h3{
+	font-size: 24px;
+	letter-spacing: -0.02em;
+	margin-bottom: 8px;
+	transition: color 0.4s;
+}
+
+.vt-in-sector p{
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5;
+	transition: color 0.4s;
+}
+
+.vt-in-sector:hover h3,
+.vt-in-sector:hover .vt-in-sector-top span{
+	color: var(--white-color);
+}
+
+.vt-in-sector:hover p{
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.vt-in-sector:hover .vt-in-sector-top i{
+	color: var(--accent-color);
+	background: var(--white-color);
+}
+
+/************************************/
+/***       04. Organizations      ***/
 /************************************/
 
 .vt-in-orgs{
@@ -207,20 +298,25 @@
 }
 
 /************************************/
-/***    04. Section backgrounds   ***/
+/***    05. Section backgrounds   ***/
 /************************************/
 
-/* Keeps grey and white sections alternating down the page */
-.vt-ed-feats-section.vt-in-feats{
-	background: var(--secondary-color);
-}
+/* Grey and white alternate down the page: hero grey, challenges white, industries grey,
+   capabilities white and perspective grey (their defaults), then the dark AI section */
 
-.vt-in-feats .vt-ed-feats li{
-	background: var(--white-color);
-}
-
+/* Perspective is only the closing statement here: no divider, even space above and below */
 .vt-ed-perspective.vt-in-perspective{
-	background: var(--white-color);
+	padding: 100px 0;
+}
+
+.vt-in-perspective .vt-ed-perspective-close{
+	margin-top: 0;
+	padding-top: 0;
+	border-top: 0;
+}
+
+.vt-in-perspective .vt-ed-perspective-close p{
+	margin: 0 auto;
 }
 
 .vt-in-perspective .vt-ed-perspective-close strong{
@@ -232,7 +328,7 @@
 }
 
 /************************************/
-/***         05. Final CTA        ***/
+/***         06. Final CTA        ***/
 /************************************/
 
 .vt-in-cta .section-title h2{
@@ -240,7 +336,7 @@
 }
 
 /************************************/
-/***        06. Responsive        ***/
+/***        07. Responsive        ***/
 /************************************/
 
 @media only screen and (max-width: 1199px){
@@ -254,7 +350,9 @@
 		font-size: 42px;
 	}
 
+	.vt-ed-perspective.vt-in-perspective,
 	.vt-problems.vt-in-challenges,
+	.vt-in-sectors,
 	.vt-in-orgs,
 	.why-choose-us.vt-in-why{
 		padding: 60px 0;
@@ -262,6 +360,14 @@
 
 	.vt-in-logos{
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.vt-in-sector-grid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.vt-in-sector{
+		min-height: 240px;
 	}
 
 	.vt-in-cta .section-title h2{
@@ -282,6 +388,34 @@
 		gap: 12px;
 	}
 
+	.vt-in-sector-grid{
+		gap: 12px;
+	}
+
+	.vt-in-sector{
+		min-height: 0;
+		padding: 22px;
+		border-radius: 22px;
+	}
+
+	.vt-in-sector-top{
+		padding-bottom: 28px;
+	}
+
+	.vt-in-sector-top i{
+		width: 46px;
+		height: 46px;
+		font-size: 20px;
+	}
+
+	.vt-in-sector h3{
+		font-size: 19px;
+	}
+
+	.vt-in-sector p{
+		font-size: 14px;
+	}
+
 	.vt-in-logos li{
 		height: 110px;
 		border-radius: 22px;
@@ -299,5 +433,13 @@
 @media (prefers-reduced-motion: reduce){
 	.vt-in-sign path{
 		transition: none;
+	}
+
+	.vt-in-sector{
+		transition: background-color 0.4s;
+	}
+
+	.vt-in-sector:hover{
+		transform: none;
 	}
 }
