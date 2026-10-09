@@ -87,9 +87,10 @@
 	})();
 
 	/* ------------------------------------------------------------------
-	   Clients: each card opens an expanded view built from the card
-	   itself. The URL hash follows the open project, so a link like
-	   education.html#client-class-organizer opens it directly.
+	   Client case studies and product use cases: each card opens an
+	   expanded view built from the card itself. The URL hash follows the
+	   open card, so a link like education.html#use-case-class-assignment
+	   opens it directly.
 	------------------------------------------------------------------ */
 	(function projects() {
 		var modal = document.getElementById("vtEdModal");
@@ -128,6 +129,7 @@
 
 			modal.showModal();
 			modal.scrollTop = 0;
+			modal.querySelector(".vt-ed-modal-body").scrollTop = 0;
 			root.style.overflow = "hidden";
 			setHash(card.getAttribute("href"));
 		}
@@ -138,7 +140,7 @@
 
 		modal.addEventListener("close", function () {
 			root.style.overflow = "";
-			if (/^#client-/.test(window.location.hash)) setHash("");
+			if (/^#(client|use-case)-/.test(window.location.hash)) setHash("");
 		});
 
 		cards.forEach(function (card) {

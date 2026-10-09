@@ -225,69 +225,103 @@
                 </div>
             </div>
 
-            <!-- One card per client: what we built for them and the problem it solves (no product names).
-                 Each card opens an expanded view (ventum-education.js). When the client case pages
-                 exist, point each href to its page and the modal steps aside. -->
-            <div class="vt-ed-project-grid">
-                <a class="vt-ed-project wow fadeInUp" href="#client-unbounded" data-wow-delay="0.1s">
-                    <span class="vt-ed-preview vt-ed-preview-gleam" aria-hidden="true">
-                        <span class="vt-ed-preview-window">
-                            <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
-                            <img class="vt-ed-pv-shot" src="images/education/client-unbounded.webp" alt="" loading="lazy">
+            <!-- Client case studies: what we built for each client and the problem it solves (no product names).
+                 Product use cases: tools shown on their own, without a client.
+                 Every card opens an expanded view (ventum-education.js). When the case pages exist,
+                 point each href to its page and the modal steps aside. -->
+            <div class="vt-ed-project-group">
+                <h3 class="vt-ed-group-title wow fadeInUp">Client case studies</h3>
+                <div class="vt-ed-project-grid vt-ed-project-grid-3">
+                    <a class="vt-ed-project wow fadeInUp" href="#client-unbounded" data-wow-delay="0.1s">
+                        <span class="vt-ed-preview vt-ed-preview-gleam" aria-hidden="true">
+                            <span class="vt-ed-preview-window">
+                                <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
+                                <img class="vt-ed-pv-shot" src="images/education/client-unbounded.webp" alt="" loading="lazy">
+                            </span>
                         </span>
-                    </span>
-                    <span class="vt-ed-project-info">
-                        <span class="vt-ed-project-head"><strong>UnboundEd</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
-                        <span class="vt-ed-project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                    </span>
-                    <!-- TODO(content): step-by-step story for the expanded view. -->
-                    <ol class="vt-ed-project-steps" hidden></ol>
-                </a>
-                <a class="vt-ed-project wow fadeInUp" href="#client-sap" data-wow-delay="0.2s">
-                    <span class="vt-ed-preview vt-ed-preview-insights" aria-hidden="true">
-                        <span class="vt-ed-preview-window">
-                            <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
-                            <img class="vt-ed-pv-shot" src="images/education/client-sap.webp" alt="" loading="lazy">
+                        <span class="vt-ed-project-info">
+                            <span class="vt-ed-project-head"><strong>UnboundEd</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
+                            <span class="vt-ed-project-desc">Reviewing curriculum materials by hand was slow and hard to keep consistent. We built an AI platform that analyzes their curricula and recommends pedagogical improvements in minutes.</span>
                         </span>
-                    </span>
-                    <span class="vt-ed-project-info">
-                        <span class="vt-ed-project-head"><strong>Student Achievement Partners</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
-                        <span class="vt-ed-project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                    </span>
-                    <!-- TODO(content): step-by-step story for the expanded view. -->
-                    <ol class="vt-ed-project-steps" hidden></ol>
-                </a>
-                <a class="vt-ed-project wow fadeInUp" href="#client-vantage" data-wow-delay="0.1s">
-                    <span class="vt-ed-preview vt-ed-preview-vantage" aria-hidden="true">
-                        <span class="vt-ed-preview-window">
-                            <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
-                            <img class="vt-ed-pv-shot" src="images/education/client-vantage.webp" alt="" loading="lazy">
+                        <ol class="vt-ed-project-steps" hidden>
+                            <li><strong>The challenge</strong>Reviewing and improving existing curriculum documents was a manual process: slow, hard to keep consistent, and difficult to scale.</li>
+                            <li><strong>What we built</strong>An AI platform that analyzes curriculum documents, detects opportunities for pedagogical improvement, recommends changes aligned with their instructional framework, and compares versions before and after.</li>
+                            <li><strong>The result</strong>Curriculum review automated with AI: documents reviewed in minutes, consistent recommendations, and the capacity to analyze hundreds of documents for entire school districts.</li>
+                        </ol>
+                    </a>
+                    <a class="vt-ed-project wow fadeInUp" href="#client-sap" data-wow-delay="0.2s">
+                        <span class="vt-ed-preview vt-ed-preview-insights" aria-hidden="true">
+                            <span class="vt-ed-preview-window">
+                                <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
+                                <img class="vt-ed-pv-shot" src="images/education/client-sap.webp" alt="" loading="lazy">
+                            </span>
                         </span>
-                    </span>
-                    <span class="vt-ed-project-info">
-                        <span class="vt-ed-project-head"><strong>Vantage Resource Group</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
-                        <span class="vt-ed-project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                    </span>
-                    <!-- TODO(content): step-by-step story for the expanded view. -->
-                    <ol class="vt-ed-project-steps" hidden></ol>
-                </a>
-                <a class="vt-ed-project wow fadeInUp" href="#client-class-organizer" data-wow-delay="0.2s">
-                    <span class="vt-ed-preview vt-ed-preview-onyx" aria-hidden="true">
-                        <span class="vt-ed-preview-window">
-                            <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
-                            <img class="vt-ed-pv-shot" src="images/education/client-class-organizer.webp" alt="" loading="lazy">
+                        <span class="vt-ed-project-info">
+                            <span class="vt-ed-project-head"><strong>Student Achievement Partners</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
+                            <span class="vt-ed-project-desc">Classroom observations relied on manual forms. We built a platform for configurable observation tools, real-time data capture, and automatic reports that support evidence-based decisions.</span>
                         </span>
-                    </span>
-                    <span class="vt-ed-project-info">
-                        <span class="vt-ed-project-head"><strong>Class Organizer</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
-                        <span class="vt-ed-project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                    </span>
-                    <!-- TODO(content): step-by-step story for the expanded view (challenge, what we built, result). -->
-                    <ol class="vt-ed-project-steps" hidden></ol>
-                </a>
+                        <ol class="vt-ed-project-steps" hidden>
+                            <li><strong>The challenge</strong>Classroom observations were done on manual forms, which made it hard to collect information consistently and to analyze the results afterwards.</li>
+                            <li><strong>What we built</strong>A platform to design fully configurable observation instruments, record observations from any device, calibrate results across evaluators, and manage organizations, users, and permissions.</li>
+                            <li><strong>The result</strong>Digital, real-time data collection, automatic reports and executive dashboards, and more reliable data for evidence-based decisions.</li>
+                        </ol>
+                    </a>
+                    <a class="vt-ed-project wow fadeInUp" href="#client-vantage" data-wow-delay="0.3s">
+                        <span class="vt-ed-preview vt-ed-preview-vantage" aria-hidden="true">
+                            <span class="vt-ed-preview-window">
+                                <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
+                                <img class="vt-ed-pv-shot" src="images/education/client-vantage.webp" alt="" loading="lazy">
+                            </span>
+                        </span>
+                        <span class="vt-ed-project-info">
+                            <span class="vt-ed-project-head"><strong>Vantage Resource Group</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
+                            <span class="vt-ed-project-desc">Their content, documents, and sales processes were spread across too many tools. We built one platform to manage editorial content, document versions, and commercial workflows in a single system.</span>
+                        </span>
+                        <ol class="vt-ed-project-steps" hidden>
+                            <li><strong>The challenge</strong>Managing thousands of educational documents, editorial content, and sales processes took several tools, which made it hard to keep information organized and up to date.</li>
+                            <li><strong>What we built</strong>One platform to manage large volumes of content, documents and their versions, users, organizations, and permissions, with automated sales processes and built-in communication and newsletter tools.</li>
+                            <li><strong>The result</strong>A single repository for all their information, full document versioning, more control over published content, and more efficient sales processes, with usage metrics and reports.</li>
+                        </ol>
+                    </a>
+                </div>
             </div>
 
-            
+            <div class="vt-ed-project-group">
+                <h3 class="vt-ed-group-title wow fadeInUp">Product use cases</h3>
+                <div class="vt-ed-project-grid">
+                    <a class="vt-ed-project wow fadeInUp" href="#use-case-class-assignment" data-wow-delay="0.1s">
+                        <span class="vt-ed-preview vt-ed-preview-usecase" aria-hidden="true">
+                            <span class="vt-ed-preview-window">
+                                <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
+                                <img class="vt-ed-pv-shot" src="images/education/client-class-organizer.webp" alt="" loading="lazy">
+                            </span>
+                        </span>
+                        <span class="vt-ed-project-info">
+                            <span class="vt-ed-project-head"><strong>Class assignment tool</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
+                            <span class="vt-ed-project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        </span>
+                        <!-- TODO(content): step-by-step story for the expanded view. -->
+                        <ol class="vt-ed-project-steps" hidden></ol>
+                    </a>
+                    <a class="vt-ed-project wow fadeInUp" href="#use-case-physics-simulator" data-wow-delay="0.2s">
+                        <span class="vt-ed-preview vt-ed-preview-usecase" aria-hidden="true">
+                            <span class="vt-ed-preview-window">
+                                <span class="vt-ed-pv-bar"><i></i><i></i><i></i></span>
+                                <img class="vt-ed-pv-shot" src="images/education/use-case-physics-simulator.webp" alt="" loading="lazy">
+                            </span>
+                        </span>
+                        <span class="vt-ed-project-info">
+                            <span class="vt-ed-project-head"><strong>Physics simulator</strong><span class="vt-ed-project-arrow"><i class="fa-solid fa-arrow-right"></i></span></span>
+                            <span class="vt-ed-project-desc">An interactive 3D physics lab for the classroom. Students build scenes, run accurate simulations, and watch energy, momentum, and forces change in live charts, from Newton&rsquo;s laws to collisions and springs.</span>
+                        </span>
+                        <ol class="vt-ed-project-steps" hidden>
+                            <li><strong>The challenge</strong>Concepts like inertia, momentum, or conservation of energy are hard to see on a whiteboard, and most classroom simulators are either too simple or not accurate enough to trust.</li>
+                            <li><strong>What we built</strong>A browser-based 3D lab where students add objects, springs, forces, and velocity arrows, adjust gravity and friction, and play ready-made scenes: Newton&rsquo;s laws, elastic collisions, pendulums, Newton&rsquo;s cradle, and more.</li>
+                            <li><strong>Under the hood</strong>Live dashboards chart energy, momentum, and speed as the simulation runs, and a diagnostics panel shows how well each quantity is conserved. The engine runs in TypeScript and in Rust compiled to WebAssembly.</li>
+                        </ol>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -307,6 +341,12 @@
         </div>
     </dialog>
     <!-- Projects Section End -->
+
+    <!-- Image Band Start -->
+    <div class="vt-band" aria-hidden="true">
+        <img src="images/education/banner1-wide.webp" srcset="images/education/banner1-wide-1200.webp 1200w, images/education/banner1-wide.webp 2400w" sizes="100vw" width="2400" height="1200" alt="" loading="lazy" style="--vt-band-y: 40%">
+    </div>
+    <!-- Image Band End -->
 
     <!-- Experience Section Start -->
     <div class="vt-ed-exp" id="experience">
@@ -454,6 +494,12 @@
         </div>
     </div>
     <!-- AI Section End -->
+
+    <!-- Image Band Start -->
+    <div class="vt-band" aria-hidden="true">
+        <img src="images/education/banner2-wide.webp" srcset="images/education/banner2-wide-1200.webp 1200w, images/education/banner2-wide.webp 2400w" sizes="100vw" width="2400" height="1200" alt="" loading="lazy" style="--vt-band-y: 30%">
+    </div>
+    <!-- Image Band End -->
 
     <!-- Contact Section Start -->
     <div class="contact-us vt-contact" id="contact">

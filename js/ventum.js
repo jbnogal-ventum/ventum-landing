@@ -218,6 +218,14 @@
 		}, { threshold: 0.35 });
 	})();
 
+	/* Image bands between sections: settle from a slight zoom once in view */
+	$all(".vt-band").forEach(function (band) {
+		var done = false;
+		onVisible(band, function (visible) {
+			if (visible && !done) { done = true; band.classList.add("is-inview"); }
+		}, { threshold: 0.2 });
+	});
+
 	/* ------------------------------------------------------------------
 	   Scroll-driven progress for the AI thread and the methodology line
 	------------------------------------------------------------------ */

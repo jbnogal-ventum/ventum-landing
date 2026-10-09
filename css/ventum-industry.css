@@ -8,10 +8,11 @@
 01. Hero + operations screens
 02. Challenges
 03. Industries
-04. Organizations
-05. Section backgrounds
-06. Final CTA
-07. Responsive
+04. Use cases
+05. Organizations
+06. Section backgrounds
+07. Final CTA
+08. Responsive
 -------------------------------------------------------------------------------------- */
 
 /************************************/
@@ -240,7 +241,40 @@
 }
 
 /************************************/
-/***       04. Organizations      ***/
+/***         04. Use cases        ***/
+/************************************/
+
+/* Client case studies and product use cases: cards come from ventum-education.css.
+   Until there are screenshots each window holds one of the hero's operations screens */
+.vt-in-uc-screen{
+	display: block;
+	padding: 18px;
+}
+
+.vt-in-uc-screen .vt-ed-panel{
+	display: block;
+}
+
+/* Client cards show a photo of the client's world, filling the stage */
+.vt-ed-preview.vt-ed-preview-photo{
+	background: var(--dark-surface);
+}
+
+.vt-ed-pv-photo{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.8s var(--ease-out);
+}
+
+.vt-ed-project:hover .vt-ed-pv-photo{
+	transform: scale(1.05);
+}
+
+/************************************/
+/***       05. Organizations      ***/
 /************************************/
 
 .vt-in-orgs{
@@ -298,11 +332,22 @@
 }
 
 /************************************/
-/***    05. Section backgrounds   ***/
+/***    06. Section backgrounds   ***/
 /************************************/
 
 /* Grey and white alternate down the page: hero grey, challenges white, industries grey,
-   capabilities white and perspective grey (their defaults), then the dark AI section */
+   use cases white, capabilities grey, perspective white, then the dark AI section */
+.vt-ed-feats-section.vt-in-feats{
+	background: var(--secondary-color);
+}
+
+.vt-in-feats .vt-ed-feats li{
+	background: var(--white-color);
+}
+
+.vt-ed-perspective.vt-in-perspective{
+	background: var(--white-color);
+}
 
 /* Perspective is only the closing statement here: no divider, even space above and below */
 .vt-ed-perspective.vt-in-perspective{
@@ -328,7 +373,7 @@
 }
 
 /************************************/
-/***         06. Final CTA        ***/
+/***         07. Final CTA        ***/
 /************************************/
 
 .vt-in-cta .section-title h2{
@@ -336,7 +381,7 @@
 }
 
 /************************************/
-/***        07. Responsive        ***/
+/***        08. Responsive        ***/
 /************************************/
 
 @media only screen and (max-width: 1199px){
@@ -432,6 +477,10 @@
 
 @media (prefers-reduced-motion: reduce){
 	.vt-in-sign path{
+		transition: none;
+	}
+
+	.vt-ed-pv-photo{
 		transition: none;
 	}
 

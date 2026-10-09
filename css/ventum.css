@@ -18,8 +18,9 @@
 11. Why Ventum
 12. Contact
 13. Footer
-14. Responsive
-15. Reduced motion
+14. Image bands
+15. Responsive
+16. Reduced motion
 -------------------------------------------------------------------------------------- */
 
 /************************************/
@@ -1529,7 +1530,35 @@ html{
 }
 
 /************************************/
-/***       14. Responsive         ***/
+/***        14. Image bands       ***/
+/************************************/
+
+/* Full-width photo strips between sections: wide and short, cropped with object-fit.
+   Each image sets its own focal point with --vt-band-y (vertical position). */
+.vt-band{
+	position: relative;
+	height: clamp(200px, 26vw, 440px);
+	overflow: hidden;
+	background: var(--dark-surface);
+}
+
+.vt-band img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 50% var(--vt-band-y, 50%);
+	transform: scale(1.06);
+	transition: transform 1.6s var(--ease-out);
+}
+
+/* Settles from a slight zoom as it scrolls into view (ventum.js adds .is-inview) */
+.vt-band.is-inview img{
+	transform: none;
+}
+
+/************************************/
+/***       15. Responsive         ***/
 /************************************/
 
 @media only screen and (max-width: 1199px){
@@ -1804,10 +1833,15 @@ html{
 }
 
 /************************************/
-/***     15. Reduced motion       ***/
+/***     16. Reduced motion       ***/
 /************************************/
 
 @media (prefers-reduced-motion: reduce){
+	.vt-band img{
+		transform: none;
+		transition: none;
+	}
+
 	html{
 		scroll-behavior: auto;
 	}
