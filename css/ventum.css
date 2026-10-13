@@ -454,7 +454,32 @@ html{
 	color: rgba(255, 255, 255, 0.8);
 	opacity: 0;
 	transform: translateY(12px);
+	pointer-events: none;
 	transition: max-height 0.5s var(--ease-out), margin 0.5s var(--ease-out), opacity 0.4s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+a.vt-client-desc{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	align-self: flex-start;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+a.vt-client-desc i{
+	font-size: 12px;
+	transition: transform 0.3s var(--ease-out);
+}
+
+a.vt-client-desc:hover,
+a.vt-client-desc:focus-visible{
+	color: var(--white-color);
+}
+
+a.vt-client-desc:hover i,
+a.vt-client-desc:focus-visible i{
+	transform: translateX(4px);
 }
 
 .vt-client:hover,
@@ -479,7 +504,9 @@ html{
 
 .vt-client:hover .vt-client-desc,
 .vt-client:focus-visible .vt-client-desc,
+.vt-client:focus-within .vt-client-desc,
 .vt-client.is-active .vt-client-desc{
+	pointer-events: auto;
 	max-height: 110px;
 	margin-top: 10px;
 	opacity: 1;

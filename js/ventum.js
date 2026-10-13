@@ -152,7 +152,7 @@
 		var track = marquee.querySelector(".vt-marquee-track");
 		var clone = track.cloneNode(true);
 		clone.setAttribute("aria-hidden", "true");
-		$all(".vt-client", clone).forEach(function (c) { c.setAttribute("tabindex", "-1"); });
+		$all(".vt-client, .vt-client-desc", clone).forEach(function (c) { c.setAttribute("tabindex", "-1"); });
 		marquee.appendChild(clone);
 
 		function setSpeed() {
