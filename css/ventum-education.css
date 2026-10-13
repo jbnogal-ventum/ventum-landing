@@ -826,6 +826,31 @@
 	margin-bottom: 18px;
 }
 
+.vt-ed-modal-link{
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 22px;
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--accent-color);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.vt-ed-modal-link:hover,
+.vt-ed-modal-link:focus-visible{
+	text-decoration-thickness: 2px;
+}
+
+.vt-ed-modal-link[hidden]{
+	display: none;
+}
+
+.vt-ed-modal-link i{
+	font-size: 12px;
+}
+
 .vt-ed-modal-story h3{
 	font-size: 13px;
 	font-weight: 700;

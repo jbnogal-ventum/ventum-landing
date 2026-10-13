@@ -101,6 +101,7 @@
 		var client = modal.querySelector(".vt-ed-modal-client");
 		var title = modal.querySelector("h2");
 		var desc = modal.querySelector(".vt-ed-modal-desc");
+		var link = modal.querySelector(".vt-ed-modal-link");
 		var story = modal.querySelector(".vt-ed-modal-story");
 		var steps = story.querySelector("ol");
 		var root = document.documentElement;
@@ -120,6 +121,14 @@
 			var tag = card.querySelector(".vt-ed-project-client");
 			client.textContent = tag ? tag.textContent : "";
 			client.hidden = !tag;
+
+			/* Link to the live site, for the projects that have one */
+			var url = card.getAttribute("data-url");
+			if (link) link.hidden = !url;
+			if (link && url) {
+				link.href = url;
+				link.querySelector("span").textContent = "Visit " + url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+			}
 
 			/* Step-by-step story: only shown once a project has its steps written */
 			var items = $all(".vt-ed-project-steps li", card);
