@@ -432,14 +432,20 @@
 			button.disabled = true;
 			setStatus("Sending…", true);
 
+			/* Sent through FormSubmit (formsubmit.co), since the site is static */
+			var data = new FormData(form);
+			data.append("_subject", "New project inquiry: " + data.get("support") + " - " + data.get("name").trim());
+			data.append("_template", "table");
+			data.append("_captcha", "false");
+
 			fetch(form.getAttribute("action"), {
 				method: "POST",
-				body: new FormData(form),
+				body: data,
 				headers: { "Accept": "application/json" }
 			})
-				.then(function (res) { return res.json().catch(function () { return { ok: false }; }); })
+				.then(function (res) { return res.json().catch(function () { return {}; }); })
 				.then(function (data) {
-					if (data && data.ok) {
+					if (data && String(data.success) === "true") {
 						form.reset();
 						setStatus("Thank you — we've received your message and will be in touch soon.", true);
 					} else {
