@@ -208,9 +208,80 @@ html{
 }
 
 .vt-lang-switch .vt-lang-icon{ flex-shrink:0; }
+
 /* Mobile menu copy of the switch: slicknav clones #menu, so hide it in the desktop menu */
 .main-menu .vt-lang-item{
 	display: none;
+}
+
+/* In the mobile menu, set the switch apart from the page links: divider + outlined pill */
+.slicknav_nav .vt-lang-item{
+	margin-top: 8px;
+	padding: 14px 20px 6px;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.slicknav_nav .vt-lang-item a{
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 16px;
+	border: 1px solid rgba(255, 255, 255, 0.6);
+	border-radius: 100px !important;
+	font-size: 14px;
+	transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.slicknav_nav .vt-lang-item a:hover,
+.slicknav_nav .vt-lang-item a:focus-visible{
+	border-color: var(--primary-color);
+}
+
+.slicknav_nav .vt-lang-item .vt-lang-icon{
+	flex-shrink: 0;
+}
+
+/* Floating "let's talk" button: replaces the menu item on mobile, hidden on desktop */
+.vt-fab{
+	display: none;
+}
+
+@media only screen and (max-width: 991px){
+	.slicknav_nav .highlighted-menu{
+		display: none !important;
+	}
+
+	.vt-fab{
+		position: fixed;
+		right: 16px;
+		bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+		z-index: 999;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 14px 20px;
+		border-radius: 100px;
+		background: var(--accent-color);
+		color: var(--white-color);
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 1;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+		transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out), visibility 0.3s;
+	}
+
+	.vt-fab:hover,
+	.vt-fab:focus-visible{
+		color: var(--white-color);
+	}
+
+	/* Hidden while the contact form is on screen */
+	.vt-fab.is-hidden{
+		opacity: 0;
+		transform: translateY(20px);
+		visibility: hidden;
+		pointer-events: none;
+	}
 }
 
 /* Dropdowns also open for keyboard users, not only on hover */
@@ -1769,8 +1840,9 @@ a.vt-client-desc:focus-visible i{
 		font-size: 38px;
 	}
 
-	.vt-section-note{
-		text-align: center;
+	/* The template centers section titles on phones; keep the clients title left-aligned with its note */
+	.vt-clients .section-row .section-title{
+		text-align: start;
 	}
 
 	.vt-problems .vt-sticky,

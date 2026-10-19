@@ -202,6 +202,18 @@
 	})();
 
 	/* ------------------------------------------------------------------
+	   Floating "let's talk" button (mobile): hide while the form is visible
+	------------------------------------------------------------------ */
+	(function fab() {
+		var fab = document.querySelector(".vt-fab");
+		var contact = document.getElementById("contact");
+		if (!fab || !contact || !("IntersectionObserver" in window)) return;
+		new IntersectionObserver(function (entries) {
+			fab.classList.toggle("is-hidden", entries[0].isIntersecting);
+		}).observe(contact);
+	})();
+
+	/* ------------------------------------------------------------------
 	   Problems: highlight the item crossing the middle of the viewport
 	------------------------------------------------------------------ */
 	(function problems() {
