@@ -10,6 +10,7 @@
 	var hasST = hasGsap && typeof window.ScrollTrigger !== "undefined";
 	var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	var hasIO = "IntersectionObserver" in window;
+	var isEs = root.lang === "es";
 
 	if (hasST) {
 		gsap.registerPlugin(ScrollTrigger);
@@ -150,22 +151,30 @@
 		var marquee = document.querySelector(".vt-marquee");
 		if (!marquee) return;
 		var track = marquee.querySelector(".vt-marquee-track");
-		var clone = track.cloneNode(true);
-		clone.setAttribute("aria-hidden", "true");
-		$all(".vt-client, .vt-client-desc", clone).forEach(function (c) { c.setAttribute("tabindex", "-1"); });
-		marquee.appendChild(clone);
+		var clones = [];
+
+		// Add enough hidden copies of the track to always cover the visible width
+		function fill() {
+			var needed = Math.ceil(marquee.clientWidth / Math.max(track.scrollWidth, 1)) + 1;
+			while (clones.length < needed) {
+				var clone = track.cloneNode(true);
+				clone.setAttribute("aria-hidden", "true");
+				$all(".vt-client, .vt-client-desc", clone).forEach(function (c) { c.setAttribute("tabindex", "-1"); });
+				marquee.appendChild(clone);
+				clones.push(clone);
+			}
+		}
 
 		function setSpeed() {
+			fill();
 			var dur = Math.max(track.scrollWidth / 55, 20) + "s";
-			track.style.animationDuration = dur;
-			clone.style.animationDuration = dur;
+			[track].concat(clones).forEach(function (t) { t.style.animationDuration = dur; });
 		}
 		setSpeed();
 		window.addEventListener("resize", setSpeed);
 
-		var cards = $all(".vt-client", marquee);
 		function clear() {
-			cards.forEach(function (c) { c.classList.remove("is-active"); });
+			$all(".vt-client", marquee).forEach(function (c) { c.classList.remove("is-active"); });
 			marquee.classList.remove("is-paused");
 		}
 
@@ -381,6 +390,17 @@
 		var status = document.getElementById("vtFormStatus");
 		var button = form.querySelector("button[type=submit]");
 		var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+		var msg = isEs ? {
+			sending: "Enviando…",
+			sent: "¡Gracias! Recibimos tu mensaje y nos pondremos en contacto pronto.",
+			failed: "Algo salió mal. Escribinos a info@ventum.dev.",
+			offline: "No pudimos enviar tu mensaje. Escribinos a info@ventum.dev."
+		} : {
+			sending: "Sending…",
+			sent: "Thank you — we've received your message and will be in touch soon.",
+			failed: "Something went wrong. Please email us at info@ventum.dev.",
+			offline: "We couldn't send your message. Please email us at info@ventum.dev."
+		};
 
 		function groupOf(el) {
 			return el.closest(".form-group");
@@ -430,11 +450,11 @@
 			}
 
 			button.disabled = true;
-			setStatus("Sending…", true);
+			setStatus(msg.sending, true);
 
 			/* Sent through FormSubmit (formsubmit.co), since the site is static */
 			var data = new FormData(form);
-			data.append("_subject", "New project inquiry: " + data.get("support") + " - " + data.get("name").trim());
+			data.append("_subject", "New project inquiry" + (isEs ? " (ES)" : "") + ": " + data.get("support") + " - " + data.get("name").trim());
 			data.append("_template", "table");
 			data.append("_captcha", "false");
 
@@ -447,13 +467,13 @@
 				.then(function (data) {
 					if (data && String(data.success) === "true") {
 						form.reset();
-						setStatus("Thank you — we've received your message and will be in touch soon.", true);
+						setStatus(msg.sent, true);
 					} else {
-						setStatus((data && data.message) || "Something went wrong. Please email us at info@ventum.dev.", false);
+						setStatus((!isEs && data && data.message) || msg.failed, false);
 					}
 				})
 				.catch(function () {
-					setStatus("We couldn't send your message. Please email us at info@ventum.dev.", false);
+					setStatus(msg.offline, false);
 				})
 				.then(function () { button.disabled = false; });
 		});

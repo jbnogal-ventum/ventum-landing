@@ -127,7 +127,7 @@
 			if (link) link.hidden = !url;
 			if (link && url) {
 				link.href = url;
-				link.querySelector("span").textContent = "Visit " + url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+				link.querySelector("span").textContent = (root.lang === "es" ? "Visitar " : "Visit ") + url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
 			}
 
 			/* Step-by-step story: only shown once a project has its steps written */
